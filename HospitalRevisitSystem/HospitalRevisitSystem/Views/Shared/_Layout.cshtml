@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+   <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" /> 
+    <link href="@Url.Content("~/Content/PagedList.css")" rel="stylesheet" type="text/css" />    
+    <link href="@Url.Content("~/Content/bootstrap/css/bootstrap.css")" rel="stylesheet" type="text/css" />
+     
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.10.0.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap/js/bootstrap.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/common.js")" type="text/javascript"></script>
+</head>
+<body>
+     <div class="container-fluid" style="height:35px;background-color:#0088cc;">
+    <div class="row-fluid" >
+       <div><h5>离院患者信息沟通平台</h5></div>
+    </div>
+        </div>
+    
+    <div class="container-fluid">
+  <div class="row-fluid">
+            <div class="span2 bs-docs-sidebar">
+                <ul class="nav nav-list bs-docs-sidenav" style="border:1px solid #0088cc;">       
+                     <li class="nav-header">患者基本信息</li>                   
+                    <li class=""><a href="~/Patient/Index">患者信息管理</a></li>
+                   
+                   
+                     <li class="nav-header">医院基本信息</li>                   
+                    <li class=""><a href="~/Department/Index">医院科室机构管理</a></li>
+                    <li><a href="~/StaffDuty/Index">医院员工职务管理</a></li>
+                    <li><a href="~/Staff/Index">医院员工信息管理</a></li>
+                    
+                    
+                     <li class="nav-header">调查问卷信息</li>                   
+                    <li class=""><a href="~/CallerTitle/Index">调查问卷管理</a></li>
+                    <li><a href="~/InvestigationQuestion/Index">调查题目管理</a></li>
+                    <li><a href="~/InvestigationKey/Index">调查题目答案管理</a></li>
+                      <li><a href="~/CallerQuestion/Index">调查问卷与题目关联管理</a></li>
+
+                      <li class="nav-header">语音调查信息</li>                   
+                    <li class=""><a href="~/VoicePlan/Index">语音调查计划管理</a></li>
+                    <li><a href="~/VoiceKey/Index">语音调查答案流水</a></li>
+                  
+
+                     <li class="nav-header">短(彩)信通知信息</li>                   
+                    <li class=""><a href="~/MessageSendPlan/Index">短(彩)信发送计划</a></li>
+                    <li><a href="~/MessageSample/Index">短(彩)信样例</a></li>
+                    
+
+                      <li class="nav-header">人工登记信息</li>                   
+                    <li class=""><a href="~/VisitsInformation/Index">预约就诊信息管理</a></li>                   
+                      <li><a href="~/PersonnalCaller/Index">人工回访计划管理</a></li>
+                      <li><a href="~/InformationRegister/Index">人工登记信息管理</a></li>
+                      <li><a href="~/PointOut/Index">人工登记信息流转管理</a></li>
+                     <li><a href="~/InvestigationQuestion/Index">调查题目管理</a></li>
+                     <li class="nav-header">字典信息</li>                   
+                    <li class=""><a href="~/DealWay/Index">登记信息处理方法管理</a></li>                   
+                      <li><a href="~/Circulation/Index">登记信息流转管理</a></li>
+                      <li><a href="~/ReviewProjectName/Index">回访计划任务名称管理</a></li>
+                      <li><a href="~/ReferenceInformation/Index">参考信息管理</a></li>
+                      <li><a href="~/ContentRecord/Index">登记涉及内容定性</a></li>           
+                    <li class="nav-header">角色管理</li>                   
+                    <li class=""><a href="~/Role/Index">角色管理</a></li>
+                    <li><a href="~/Admin/ChangePassword">修改密码</a></li>
+                    <li><a href="~/Home/Quit">安全退出</a></li>
+                </ul>
+            </div>
+            <div class="span10">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="row-fluid">
+        <div class="span12"></div>
+    </div>
+</body>
+</html>

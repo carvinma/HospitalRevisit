@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbInvestigation_Question>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>调查题目列表</h2>
+@using (Html.BeginForm("Index", "InvestigationQuestion", FormMethod.Get))
+{
+    <p>
+        回访内容: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","InvestigationQuestion",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+            回访内容
+        </th>
+        <th>
+            TTs合成语音文件路径
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Review_Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.File_Paths)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new { id=item.Investigation_Question_ID },new {@class= "btn btn-success"}) |
+           
+            @Html.ActionLink("删除", "Delete", new { id=item.Investigation_Question_ID },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )   

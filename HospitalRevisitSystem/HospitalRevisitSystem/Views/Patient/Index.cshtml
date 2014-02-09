@@ -1,0 +1,110 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbPatient>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>患者信息列表</h2>
+@using (Html.BeginForm("Index", "Patient", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","Patient",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+         <th>
+            患者姓名
+        </th>
+        <th>
+           医保卡号码
+        </th>
+        <th>
+            病历号码
+        </th>
+       
+        <th>
+            性别
+        </th>
+        <th>
+           生日
+        </th>
+        <th>
+          联系地址
+        </th>
+        <th>
+           是否死亡
+        </th>
+        <th>
+            电话号码簿
+        </th>
+        <th>
+            已就诊信息
+        </th>
+        <th></th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+         <td>
+            @Html.DisplayFor(modelItem => item.Patient_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Heath_Card)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Document_No)
+        </td>
+        @if (item.Sex == true)
+        {
+            <td>
+            男
+        </td>
+        }
+        else
+        {
+             <td>
+            女
+        </td>
+        }
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Birthday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        @if (item.Is_Dead == true)
+        {
+            <td>
+            是
+        </td>
+        }
+        else
+        {
+             <td>
+            否
+        </td>
+        }
+        <td>
+             @Html.ActionLink("查看", "Index","PhoneBook", new {  id=item.Patient_ID},new {@class= "btn btn-success"})
+        </td>
+        <td>
+             @Html.ActionLink("查看", "Index","Diagnosis", new {  id=item.Patient_ID},new {@class= "btn btn-success"})
+        </td>
+        <td>
+            @Html.ActionLink("修改", "Edit", new {  id=item.Patient_ID  },new {@class= "btn btn-success"}) 
+            
+            @Html.ActionLink("删除", "Delete", new {  id=item.Patient_ID  },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) ) 

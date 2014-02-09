@@ -1,0 +1,67 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbStaff>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>员工信息列表</h2>
+@using (Html.BeginForm("Index", "Staff", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","Staff",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+           姓名
+        </th>
+        <th>
+            工号
+        </th>
+        <th>
+            职务编码
+        </th>
+        <th>
+           科室编码
+        </th>
+        <th>
+        移动电话号码
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Staff_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Staff_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbStaffDuty.StaffDuty_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbDepartment.Department_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_Number)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new {  id=item.Staff_ID },new {@class= "btn btn-success"}) 
+           
+            @Html.ActionLink("删除", "Delete", new { id=item.Staff_ID },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )   

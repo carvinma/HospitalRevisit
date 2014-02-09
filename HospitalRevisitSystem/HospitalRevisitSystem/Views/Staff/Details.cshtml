@@ -1,0 +1,57 @@
+﻿@model HospitalRevisitSystem.tbStaff
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbStaff</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Staff_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Staff_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Staff_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Staff_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Staff_No)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Staff_No)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbStaffDuty.StaffDuty_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbStaffDuty.StaffDuty_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbDepartment.Department_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbDepartment.Department_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phone_Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone_Number)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

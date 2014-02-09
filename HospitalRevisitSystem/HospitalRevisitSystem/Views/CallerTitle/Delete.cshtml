@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbCaller_Title
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbCaller_Title</legend>
+
+    
+
+    <div class="display-label">
+        调查问卷表名称
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Caller_Title_Name)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Caller_Title_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","CallerTitle",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

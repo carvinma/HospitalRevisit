@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbRole
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbRole</legend>
+
+        
+
+        <div class="editor-label">
+           角色名称
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Role_Name)
+            @Html.ValidationMessageFor(model => model.Role_Name)
+        </div>
+
+        <div class="editor-label">
+          角色菜单
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Role_Menus)
+            @Html.ValidationMessageFor(model => model.Role_Menus)
+        </div>
+          @Html.HiddenFor(model => model.Role_ID)
+         <p>
+            @Html.ActionLink("取消", "Index","Role",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+
+

@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbInvestigation_Key
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>新增调查题目答案</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbInvestigation_Key</legend>
+
+      
+
+        <div class="editor-label">
+              调查题目表编码
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Iinvestigatio_Question_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Iinvestigatio_Question_ID)
+        </div>
+
+        <div class="editor-label">
+             答案标识码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Answer_Marked_No)
+            @Html.ValidationMessageFor(model => model.Answer_Marked_No)
+        </div>
+
+        <div class="editor-label">
+              答案内容
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Answer_Content)
+            @Html.ValidationMessageFor(model => model.Answer_Content)
+        </div>
+
+        
+        <p>
+            @Html.ActionLink("取消", "Index","InvestigationKey",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+
+

@@ -1,0 +1,81 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbPoint_Out>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "PointOut", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","PointOut",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+           人工登记信息编码
+        </th>
+        <th>
+            登记信息处理方法编码
+        </th>
+        <th>
+           回应科室编码
+        </th>
+        <th>
+            回应科室员工编码
+        </th>
+        <th>
+            科室回应时间
+        </th>
+        <th>
+            科室回应内容
+        </th>
+        <th>
+            备注
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Point_Out_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbInformation_Register.Consulting_Phone_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbDeal_Way.Processing_Method)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbDepartment.Department_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbStaff.Staff_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department_Response_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department_Response_Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new {  id=item.Point_Out_ID },new {@class= "btn btn-success") 
+         
+            @Html.ActionLink("删除", "Delete", new { id=item.Point_Out_ID },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )   

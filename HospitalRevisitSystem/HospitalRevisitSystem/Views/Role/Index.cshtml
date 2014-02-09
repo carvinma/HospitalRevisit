@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbRole>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "Role", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","Role",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+      
+        <th>
+            角色名称
+        </th>
+        <th>
+           角色菜单
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role_Menus)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new { id=item.Role_ID },new {@class= "btn btn-success"}) 
+            
+            @Html.ActionLink("删除", "Delete", new {  id=item.Role_ID },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )   

@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbStaff
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbStaff</legend>
+
+        
+
+        <div class="editor-label">
+          姓名
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Staff_Name)
+            @Html.ValidationMessageFor(model => model.Staff_Name)
+        </div>
+
+        <div class="editor-label">
+          工号
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Staff_No)
+            @Html.ValidationMessageFor(model => model.Staff_No)
+        </div>
+
+        <div class="editor-label">
+           职务编码
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("StaffDuty_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.StaffDuty_ID)
+        </div>
+
+        <div class="editor-label">
+           科室编码
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Department_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Department_ID)
+        </div>
+
+        <div class="editor-label">
+          移动电话号码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone_Number)
+            @Html.ValidationMessageFor(model => model.Phone_Number)
+        </div>
+            @Html.HiddenFor(model => model.Staff_ID)
+         <p>
+            @Html.ActionLink("取消", "Index","Staff",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+
+

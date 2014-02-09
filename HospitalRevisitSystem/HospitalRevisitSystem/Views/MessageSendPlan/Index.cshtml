@@ -1,0 +1,75 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbMessage_Send_Plan>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "MessageSendPlan", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","MessageSendPlan",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+            电话号码
+        </th>
+        <th>
+            计划发送时间
+        </th>
+        <th>
+           实际发送时间
+        </th>
+        <th>
+            待发短信内容
+        </th>
+        <th>
+            待发彩信文件路径
+        </th>
+        <th>
+          是否发送
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message_Send_Plan_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plan_Send_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Actual_Send_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message_Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MMS_Path)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Send)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new {  id=item.Message_Send_Plan_ID },new {@class= "btn btn-success"}) |
+          
+            @Html.ActionLink("删除", "Delete", new {  id=item.Message_Send_Plan_ID},new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) ) 

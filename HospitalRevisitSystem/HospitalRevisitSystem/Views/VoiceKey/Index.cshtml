@@ -1,0 +1,75 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbVoice_Key>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "VoiceKey", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","VoiceKey",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+            语音调查计划表结构编码
+        </th>
+        <th>
+           调查问卷表编码
+        </th>
+        <th>
+         调查题目表编码
+        </th>
+        <th>
+           答案标识码
+        </th>
+        <th>
+          记录生成时间
+        </th>
+        <th>
+            是否分配人工再调查
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Voice_Key_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Voice_Plan_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Caller_Title_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Investigation_Question_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Answer_Marked_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Record_Generate_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Manual_Revisit)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new {  id=item.Voice_Key_ID },new {@class= "btn btn-success"}) 
+          
+            @Html.ActionLink("删除", "Delete", new {  id=item.Voice_Key_ID },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )  

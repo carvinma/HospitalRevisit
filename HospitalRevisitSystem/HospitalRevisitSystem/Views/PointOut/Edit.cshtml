@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbPoint_Out
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbPoint_Out</legend>
+
+
+        <div class="editor-label">
+            人工登记信息编码
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Information_Register_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Information_Register_ID)
+        </div>
+
+        <div class="editor-label">
+           登记信息处理方法编码
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Deal_Way_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Deal_Way_ID)
+        </div>
+
+        <div class="editor-label">
+           回应科室编码
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Response_Department_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Response_Department_ID)
+        </div>
+
+        <div class="editor-label">
+          回应科室员工编码
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Response_Staff_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Response_Staff_ID)
+        </div>
+
+        <div class="editor-label">
+           科室回应时间
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Department_Response_Time)
+            @Html.ValidationMessageFor(model => model.Department_Response_Time)
+        </div>
+
+        <div class="editor-label">
+           科室回应内容
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Department_Response_Content)
+            @Html.ValidationMessageFor(model => model.Department_Response_Content)
+        </div>
+
+        <div class="editor-label">
+            备注
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Remarks)
+            @Html.ValidationMessageFor(model => model.Remarks)
+        </div>
+         @Html.HiddenFor(model => model.Point_Out_ID)
+        <p>
+            @Html.ActionLink("取消", "Index","PointOut",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+

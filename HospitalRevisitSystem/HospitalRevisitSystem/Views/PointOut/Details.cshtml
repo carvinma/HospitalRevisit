@@ -1,0 +1,71 @@
+﻿@model HospitalRevisitSystem.tbPoint_Out
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbPoint_Out</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Point_Out_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Point_Out_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbInformation_Register.Consulting_Phone_Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbInformation_Register.Consulting_Phone_Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbDeal_Way.Processing_Method)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbDeal_Way.Processing_Method)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbDepartment.Department_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbDepartment.Department_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbStaff.Staff_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbStaff.Staff_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Department_Response_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department_Response_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Department_Response_Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department_Response_Content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Remarks)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Remarks)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

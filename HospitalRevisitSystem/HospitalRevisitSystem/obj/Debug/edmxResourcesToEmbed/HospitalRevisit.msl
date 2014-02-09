@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbHospitalRevisitModelStoreContainer" CdmEntityContainer="dbHospitalRevisitEntities">
+    <EntitySetMapping Name="tbCaller_Question">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbCaller_Question">
+        <MappingFragment StoreEntitySet="tbCaller_Question">
+          <ScalarProperty Name="Caller_Question_ID" ColumnName="Caller_Question_ID" />
+          <ScalarProperty Name="Caller_Title_ID" ColumnName="Caller_Title_ID" />
+          <ScalarProperty Name="Investigation_Question_ID" ColumnName="Investigation_Question_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCaller_Title">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbCaller_Title">
+        <MappingFragment StoreEntitySet="tbCaller_Title">
+          <ScalarProperty Name="Caller_Title_ID" ColumnName="Caller_Title_ID" />
+          <ScalarProperty Name="Caller_Title_Name" ColumnName="Caller_Title_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbCirculation">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbCirculation">
+        <MappingFragment StoreEntitySet="tbCirculation">
+          <ScalarProperty Name="Circulation_ID" ColumnName="Circulation_ID" />
+          <ScalarProperty Name="Processor_Serial_Number" ColumnName="Processor_Serial_Number" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbContent_Record">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbContent_Record">
+        <MappingFragment StoreEntitySet="tbContent_Record">
+          <ScalarProperty Name="Content_Record_ID" ColumnName="Content_Record_ID" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Superior_No" ColumnName="Superior_No" />
+          <ScalarProperty Name="Sequence_Number" ColumnName="Sequence_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDeal_Way">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbDeal_Way">
+        <MappingFragment StoreEntitySet="tbDeal_Way">
+          <ScalarProperty Name="Deal_Way_ID" ColumnName="Deal_Way_ID" />
+          <ScalarProperty Name="Processing_Method" ColumnName="Processing_Method" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDepartment">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbDepartment">
+        <MappingFragment StoreEntitySet="tbDepartment">
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbDiagnosis">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbDiagnosis">
+        <MappingFragment StoreEntitySet="tbDiagnosis">
+          <ScalarProperty Name="Diagnosis_ID" ColumnName="Diagnosis_ID" />
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="In_Hospital_NO" ColumnName="In_Hospital_NO" />
+          <ScalarProperty Name="Principal_Diagnosis" ColumnName="Principal_Diagnosis" />
+          <ScalarProperty Name="Out_Hospital_Advice" ColumnName="Out_Hospital_Advice" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="In_Hospital_Date" ColumnName="In_Hospital_Date" />
+          <ScalarProperty Name="Out_Hospital_Date" ColumnName="Out_Hospital_Date" />
+          <ScalarProperty Name="Rediagnose_Date" ColumnName="Rediagnose_Date" />
+          <ScalarProperty Name="Rediagnose_Department_ID" ColumnName="Rediagnose_Department_ID" />
+          <ScalarProperty Name="Rediagnose_Doctor" ColumnName="Rediagnose_Doctor" />
+          <ScalarProperty Name="Is_Assign_Voice_Survey" ColumnName="Is_Assign_Voice_Survey" />
+          <ScalarProperty Name="Is_Assign_Manual_Survey" ColumnName="Is_Assign_Manual_Survey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbInformation_Register">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbInformation_Register">
+        <MappingFragment StoreEntitySet="tbInformation_Register">
+          <ScalarProperty Name="Information_Register_ID" ColumnName="Information_Register_ID" />
+          <ScalarProperty Name="Personnal_Caller_ID" ColumnName="Personnal_Caller_ID" />
+          <ScalarProperty Name="Consulting_Phone_Number" ColumnName="Consulting_Phone_Number" />
+          <ScalarProperty Name="Air_Time" ColumnName="Air_Time" />
+          <ScalarProperty Name="Involve_Content" ColumnName="Involve_Content" />
+          <ScalarProperty Name="Involve_Department_ID" ColumnName="Involve_Department_ID" />
+          <ScalarProperty Name="Involve_StaffInfo_ID" ColumnName="Involve_StaffInfo_ID" />
+          <ScalarProperty Name="Involve_Content_Qualitative" ColumnName="Involve_Content_Qualitative" />
+          <ScalarProperty Name="Is_Moving" ColumnName="Is_Moving" />
+          <ScalarProperty Name="SOSC_CSR_ID" ColumnName="SOSC_CSR_ID" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbInvestigation_Key">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbInvestigation_Key">
+        <MappingFragment StoreEntitySet="tbInvestigation_Key">
+          <ScalarProperty Name="Investigation_Key_ID" ColumnName="Investigation_Key_ID" />
+          <ScalarProperty Name="Iinvestigatio_Question_ID" ColumnName="Iinvestigatio_Question_ID" />
+          <ScalarProperty Name="Answer_Marked_No" ColumnName="Answer_Marked_No" />
+          <ScalarProperty Name="Answer_Content" ColumnName="Answer_Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbInvestigation_Question">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbInvestigation_Question">
+        <MappingFragment StoreEntitySet="tbInvestigation_Question">
+          <ScalarProperty Name="Investigation_Question_ID" ColumnName="Investigation_Question_ID" />
+          <ScalarProperty Name="Review_Content" ColumnName="Review_Content" />
+          <ScalarProperty Name="File_Paths" ColumnName="File_Paths" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMessage_Sample">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbMessage_Sample">
+        <MappingFragment StoreEntitySet="tbMessage_Sample">
+          <ScalarProperty Name="Message_Sample_ID" ColumnName="Message_Sample_ID" />
+          <ScalarProperty Name="Message_Content" ColumnName="Message_Content" />
+          <ScalarProperty Name="MMS_Path" ColumnName="MMS_Path" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbMessage_Send_Plan">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbMessage_Send_Plan">
+        <MappingFragment StoreEntitySet="tbMessage_Send_Plan">
+          <ScalarProperty Name="Message_Send_Plan_ID" ColumnName="Message_Send_Plan_ID" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Plan_Send_Time" ColumnName="Plan_Send_Time" />
+          <ScalarProperty Name="Actual_Send_Time" ColumnName="Actual_Send_Time" />
+          <ScalarProperty Name="Message_Content" ColumnName="Message_Content" />
+          <ScalarProperty Name="MMS_Path" ColumnName="MMS_Path" />
+          <ScalarProperty Name="Is_Send" ColumnName="Is_Send" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPatient">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbPatient">
+        <MappingFragment StoreEntitySet="tbPatient">
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="Heath_Card" ColumnName="Heath_Card" />
+          <ScalarProperty Name="Document_No" ColumnName="Document_No" />
+          <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Is_Dead" ColumnName="Is_Dead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPersonnal_Caller">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbPersonnal_Caller">
+        <MappingFragment StoreEntitySet="tbPersonnal_Caller">
+          <ScalarProperty Name="Personnal_Caller_ID" ColumnName="Personnal_Caller_ID" />
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="Vioce_Key_Account_ID" ColumnName="Vioce_Key_Account_ID" />
+          <ScalarProperty Name="Review_Project_Name_ID" ColumnName="Review_Project_Name_ID" />
+          <ScalarProperty Name="SOSC_CSR_ID" ColumnName="SOSC_CSR_ID" />
+          <ScalarProperty Name="Is_Return_Visit" ColumnName="Is_Return_Visit" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPhoneBook">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbPhoneBook">
+        <MappingFragment StoreEntitySet="tbPhoneBook">
+          <ScalarProperty Name="PhoneBook_ID" ColumnName="PhoneBook_ID" />
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Phone_Name" ColumnName="Phone_Name" />
+          <ScalarProperty Name="patient_relation" ColumnName="patient_relation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbPoint_Out">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbPoint_Out">
+        <MappingFragment StoreEntitySet="tbPoint_Out">
+          <ScalarProperty Name="Point_Out_ID" ColumnName="Point_Out_ID" />
+          <ScalarProperty Name="Information_Register_ID" ColumnName="Information_Register_ID" />
+          <ScalarProperty Name="Deal_Way_ID" ColumnName="Deal_Way_ID" />
+          <ScalarProperty Name="Response_Department_ID" ColumnName="Response_Department_ID" />
+          <ScalarProperty Name="Response_Staff_ID" ColumnName="Response_Staff_ID" />
+          <ScalarProperty Name="Department_Response_Time" ColumnName="Department_Response_Time" />
+          <ScalarProperty Name="Department_Response_Content" ColumnName="Department_Response_Content" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbReference_Information">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbReference_Information">
+        <MappingFragment StoreEntitySet="tbReference_Information">
+          <ScalarProperty Name="Reference_Information_ID" ColumnName="Reference_Information_ID" />
+          <ScalarProperty Name="Information_Content" ColumnName="Information_Content" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="Sequence_Number" ColumnName="Sequence_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbReview_Project_Name">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbReview_Project_Name">
+        <MappingFragment StoreEntitySet="tbReview_Project_Name">
+          <ScalarProperty Name="Review_Project_Name_ID" ColumnName="Review_Project_Name_ID" />
+          <ScalarProperty Name="Review_Name" ColumnName="Review_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbRole">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbRole">
+        <MappingFragment StoreEntitySet="tbRole">
+          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Role_Menus" ColumnName="Role_Menus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbStaff">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbStaff">
+        <MappingFragment StoreEntitySet="tbStaff">
+          <ScalarProperty Name="Staff_ID" ColumnName="Staff_ID" />
+          <ScalarProperty Name="Staff_Name" ColumnName="Staff_Name" />
+          <ScalarProperty Name="Staff_No" ColumnName="Staff_No" />
+          <ScalarProperty Name="StaffDuty_ID" ColumnName="StaffDuty_ID" />
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbStaffDuty">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbStaffDuty">
+        <MappingFragment StoreEntitySet="tbStaffDuty">
+          <ScalarProperty Name="StaffDuty_ID" ColumnName="StaffDuty_ID" />
+          <ScalarProperty Name="StaffDuty_Name" ColumnName="StaffDuty_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbVisits_Information">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbVisits_Information">
+        <MappingFragment StoreEntitySet="tbVisits_Information">
+          <ScalarProperty Name="Visits_Information_ID" ColumnName="Visits_Information_ID" />
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="Submit_Date" ColumnName="Submit_Date" />
+          <ScalarProperty Name="The_Reservation_Department" ColumnName="The_Reservation_Department" />
+          <ScalarProperty Name="ZocDoc" ColumnName="ZocDoc" />
+          <ScalarProperty Name="Records_Generated_Date" ColumnName="Records_Generated_Date" />
+          <ScalarProperty Name="Is_Exercise" ColumnName="Is_Exercise" />
+          <ScalarProperty Name="Exercise_Staff_No" ColumnName="Exercise_Staff_No" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbVoice_Key">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbVoice_Key">
+        <MappingFragment StoreEntitySet="tbVoice_Key">
+          <ScalarProperty Name="Voice_Key_ID" ColumnName="Voice_Key_ID" />
+          <ScalarProperty Name="Voice_Plan_ID" ColumnName="Voice_Plan_ID" />
+          <ScalarProperty Name="Caller_Title_ID" ColumnName="Caller_Title_ID" />
+          <ScalarProperty Name="Investigation_Question_ID" ColumnName="Investigation_Question_ID" />
+          <ScalarProperty Name="Answer_Marked_No" ColumnName="Answer_Marked_No" />
+          <ScalarProperty Name="Record_Generate_Time" ColumnName="Record_Generate_Time" />
+          <ScalarProperty Name="Is_Manual_Revisit" ColumnName="Is_Manual_Revisit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbVoice_Plan">
+      <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbVoice_Plan">
+        <MappingFragment StoreEntitySet="tbVoice_Plan">
+          <ScalarProperty Name="Voice_Plan_ID" ColumnName="Voice_Plan_ID" />
+          <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+          <ScalarProperty Name="Diagnosis_ID" ColumnName="Diagnosis_ID" />
+          <ScalarProperty Name="Caller_Title_ID" ColumnName="Caller_Title_ID" />
+          <ScalarProperty Name="Planning_Time" ColumnName="Planning_Time" />
+          <ScalarProperty Name="Revisit_Days" ColumnName="Revisit_Days" />
+          <ScalarProperty Name="Is_Revisit" ColumnName="Is_Revisit" />
+          <ScalarProperty Name="File_Paths" ColumnName="File_Paths" />
+          <ScalarProperty Name="Is_Answer" ColumnName="Is_Answer" />
+          <ScalarProperty Name="Is_Manual_Revisit" ColumnName="Is_Manual_Revisit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

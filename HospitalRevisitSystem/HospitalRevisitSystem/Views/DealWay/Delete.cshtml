@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbDeal_Way
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbDeal_Way</legend>
+
+    
+
+    <div class="display-label">
+         处理方法
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Processing_Method)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Deal_Way_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","DealWay",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

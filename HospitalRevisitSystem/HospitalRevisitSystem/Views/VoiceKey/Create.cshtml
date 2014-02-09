@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbVoice_Key
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbVoice_Key</legend>
+
+        
+
+        <div class="editor-label">
+         语音调查计划表结构
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Voice_Plan_ID)
+            @Html.ValidationMessageFor(model => model.Voice_Plan_ID)
+        </div>
+
+        <div class="editor-label">
+         调查问卷表编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Caller_Title_ID)
+            @Html.ValidationMessageFor(model => model.Caller_Title_ID)
+        </div>
+
+        <div class="editor-label">
+           调查题目表编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Investigation_Question_ID)
+            @Html.ValidationMessageFor(model => model.Investigation_Question_ID)
+        </div>
+
+        <div class="editor-label">
+          答案标识码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Answer_Marked_No)
+            @Html.ValidationMessageFor(model => model.Answer_Marked_No)
+        </div>
+
+        <div class="editor-label">
+           记录生成时间
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Record_Generate_Time)
+            @Html.ValidationMessageFor(model => model.Record_Generate_Time)
+        </div>
+
+        <div class="editor-label">
+            是否分配人工再调查
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Manual_Revisit)
+            @Html.ValidationMessageFor(model => model.Is_Manual_Revisit)
+        </div>
+
+         
+        <p>
+            @Html.ActionLink("取消", "Index", "VoiceKey", null, new { @class = "btn" })
+            <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+
+

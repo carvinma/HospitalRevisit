@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbCirculation
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbCirculation</legend>
+
+    
+
+    <div class="display-label">
+       处理顺序号
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Processor_Serial_Number)
+    </div>
+
+    <div class="display-label">
+      医院科室机构名称编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department_ID)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Circulation_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","Circulation",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

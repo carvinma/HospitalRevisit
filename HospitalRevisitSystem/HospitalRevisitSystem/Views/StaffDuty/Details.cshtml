@@ -1,0 +1,29 @@
+﻿@model HospitalRevisitSystem.tbStaffDuty
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbStaffDuty</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StaffDuty_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StaffDuty_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.StaffDuty_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StaffDuty_Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbPersonnal_Caller>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>人工回访计划列表</h2>
+@using (Html.BeginForm("Index", "PersonnalCaller", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","PersonnalCaller",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+           患者编码
+        </th>
+        <th>
+     语音调查答案流水编码
+        </th>
+        <th>
+            回访计划任务名称表编码
+        </th>
+        <th>
+           回访员编码
+        </th>
+        <th>
+           是否回访
+        </th>
+        <th>
+            备注
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vioce_Key_Account_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Review_Project_Name_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOSC_CSR_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Return_Visit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new {  id=item.Personnal_Caller_ID },new {@class= "btn btn-success"}) 
+           
+            @Html.ActionLink("删除", "Delete", new {  id=item.Personnal_Caller_ID },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) ) 

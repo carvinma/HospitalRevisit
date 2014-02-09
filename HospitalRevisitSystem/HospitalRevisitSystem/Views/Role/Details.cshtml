@@ -1,0 +1,36 @@
+﻿@model HospitalRevisitSystem.tbRole
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbRole</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Role_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Role_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Role_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Role_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Role_Menus)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Role_Menus)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

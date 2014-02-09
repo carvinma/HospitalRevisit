@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbPersonnal_Caller
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>编辑人工回访计划</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbPersonnal_Caller</legend>
+
+        
+
+        <div class="editor-label">
+          患者基本信息结构编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Patient_ID)
+            @Html.ValidationMessageFor(model => model.Patient_ID)
+        </div>
+
+        <div class="editor-label">
+          语音调查答案流水编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Vioce_Key_Account_ID)
+            @Html.ValidationMessageFor(model => model.Vioce_Key_Account_ID)
+        </div>
+
+        <div class="editor-label">
+            回访计划任务名称表编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Review_Project_Name_ID)
+            @Html.ValidationMessageFor(model => model.Review_Project_Name_ID)
+        </div>
+
+        <div class="editor-label">
+             回访员编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SOSC_CSR_ID)
+            @Html.ValidationMessageFor(model => model.SOSC_CSR_ID)
+        </div>
+
+        <div class="editor-label">
+            是否回访
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Return_Visit)
+            @Html.ValidationMessageFor(model => model.Is_Return_Visit)
+        </div>
+
+        <div class="editor-label">
+            备注
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Remarks)
+            @Html.ValidationMessageFor(model => model.Remarks)
+        </div>
+           @Html.HiddenFor(model => model.Personnal_Caller_ID)
+         <p>
+            @Html.ActionLink("取消", "Index","PersonnalCaller",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+
+

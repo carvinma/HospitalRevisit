@@ -1,0 +1,64 @@
+﻿@model HospitalRevisitSystem.tbMessage_Send_Plan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbMessage_Send_Plan</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message_Send_Plan_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message_Send_Plan_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phone_Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone_Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Plan_Send_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Plan_Send_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Actual_Send_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Actual_Send_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message_Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message_Content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MMS_Path)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MMS_Path)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Send)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Send)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

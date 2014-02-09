@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLogOn.cshtml";
+}
+@model FWMemberAdmin.Models.LogOnModel
+@{
+    ViewBag.Title = "管理员登录";
+}
+ 
+
+
+<div class="row-fluid">
+    <div class="span4" ></div>
+@using (Html.BeginForm()) {
+    <div class="span4" style="padding-top:200px">
+        <fieldset>
+            <legend>管理员登录</legend>
+@Html.ValidationSummary(true, "管理员账户或密码不正确")
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Admin_Name)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Admin_Name)
+                @Html.ValidationMessageFor(m => m.Admin_Name)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Admin_Password)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(m => m.Admin_Password)
+                @Html.ValidationMessageFor(m => m.Admin_Password)
+            </div>
+
+           
+            <p>
+                <input type="submit" class="btn btn-success" value="登录" />
+            </p>
+        </fieldset>
+    </div>
+}
+    <div class="span4"></div>
+</div>

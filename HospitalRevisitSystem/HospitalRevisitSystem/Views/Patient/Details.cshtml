@@ -1,0 +1,71 @@
+﻿@model HospitalRevisitSystem.tbPatient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbPatient</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Patient_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Patient_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Heath_Card)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Heath_Card)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Document_No)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Document_No)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Patient_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Patient_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sex)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sex)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Birthday)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Birthday)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Dead)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Dead)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

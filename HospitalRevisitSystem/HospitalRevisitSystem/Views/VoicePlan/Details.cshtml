@@ -1,0 +1,85 @@
+﻿@model HospitalRevisitSystem.tbVoice_Plan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbVoice_Plan</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Voice_Plan_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Voice_Plan_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Patient_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Patient_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Diagnosis_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Diagnosis_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Caller_Title_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Caller_Title_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Planning_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Planning_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Revisit_Days)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Revisit_Days)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Revisit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Revisit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.File_Paths)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.File_Paths)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Answer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Answer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Manual_Revisit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Manual_Revisit)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

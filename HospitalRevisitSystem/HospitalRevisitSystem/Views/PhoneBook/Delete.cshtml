@@ -1,0 +1,38 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbPhoneBook
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbPhoneBook</legend>
+
+    
+
+    <div class="display-label">
+         电话号码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone_Number)
+    </div>
+
+    <div class="display-label">
+         机主姓名
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone_Name)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.PhoneBook_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","PhoneBook",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

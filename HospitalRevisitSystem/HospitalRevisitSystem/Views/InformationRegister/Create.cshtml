@@ -1,0 +1,110 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbInformation_Register
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbInformation_Register</legend>
+
+    
+        
+
+        <div class="editor-label">
+            人工回访计划表编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Personnal_Caller_ID)
+            @Html.ValidationMessageFor(model => model.Personnal_Caller_ID)
+        </div>
+
+        <div class="editor-label">
+           咨询电话号码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Consulting_Phone_Number)
+            @Html.ValidationMessageFor(model => model.Consulting_Phone_Number)
+        </div>
+
+        <div class="editor-label">
+              通话时间
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Air_Time)
+            @Html.ValidationMessageFor(model => model.Air_Time)
+        </div>
+
+        <div class="editor-label">
+           涉及内容
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Involve_Content)
+            @Html.ValidationMessageFor(model => model.Involve_Content)
+        </div>
+
+        <div class="editor-label">
+             涉及科室编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Involve_Department_ID)
+            @Html.ValidationMessageFor(model => model.Involve_Department_ID)
+        </div>
+
+        <div class="editor-label">
+            涉及员工编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Involve_StaffInfo_ID)
+            @Html.ValidationMessageFor(model => model.Involve_StaffInfo_ID)
+        </div>
+
+        <div class="editor-label">
+             涉及内容定性
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Involve_Content_Qualitative)
+            @Html.ValidationMessageFor(model => model.Involve_Content_Qualitative)
+        </div>
+
+        <div class="editor-label">
+        流转状态
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Moving)
+            @Html.ValidationMessageFor(model => model.Is_Moving)
+        </div>
+
+        <div class="editor-label">
+          回访员编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SOSC_CSR_ID)
+            @Html.ValidationMessageFor(model => model.SOSC_CSR_ID)
+        </div>
+
+        <div class="editor-label">
+       备注
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Remarks)
+            @Html.ValidationMessageFor(model => model.Remarks)
+        </div>
+
+ 
+        <p>
+            @Html.ActionLink("取消", "Index","InformationRegister",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+
+

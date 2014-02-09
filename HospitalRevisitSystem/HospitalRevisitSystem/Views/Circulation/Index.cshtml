@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbCirculation>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "Circulation", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","Circulation",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+            处理顺序号
+        </th>
+        <th>
+            医院科室机构名称编码
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Circulation_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Processor_Serial_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department_ID)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new { id=item.Circulation_ID },new {@class= "btn btn-success"}) |
+           
+            @Html.ActionLink("删除", "Delete", new { id=item.Circulation_ID },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )

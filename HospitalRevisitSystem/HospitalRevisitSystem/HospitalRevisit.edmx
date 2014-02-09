@@ -1,0 +1,1680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbHospitalRevisitModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="dbHospitalRevisitModelStoreContainer">
+          <EntitySet Name="tbCaller_Question" EntityType="dbHospitalRevisitModel.Store.tbCaller_Question" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbCaller_Title" EntityType="dbHospitalRevisitModel.Store.tbCaller_Title" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbCirculation" EntityType="dbHospitalRevisitModel.Store.tbCirculation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbContent_Record" EntityType="dbHospitalRevisitModel.Store.tbContent_Record" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbDeal_Way" EntityType="dbHospitalRevisitModel.Store.tbDeal_Way" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbDepartment" EntityType="dbHospitalRevisitModel.Store.tbDepartment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbDiagnosis" EntityType="dbHospitalRevisitModel.Store.tbDiagnosis" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbInformation_Register" EntityType="dbHospitalRevisitModel.Store.tbInformation_Register" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbInvestigation_Key" EntityType="dbHospitalRevisitModel.Store.tbInvestigation_Key" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbInvestigation_Question" EntityType="dbHospitalRevisitModel.Store.tbInvestigation_Question" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbMessage_Sample" EntityType="dbHospitalRevisitModel.Store.tbMessage_Sample" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbMessage_Send_Plan" EntityType="dbHospitalRevisitModel.Store.tbMessage_Send_Plan" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbPatient" EntityType="dbHospitalRevisitModel.Store.tbPatient" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbPersonnal_Caller" EntityType="dbHospitalRevisitModel.Store.tbPersonnal_Caller" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbPhoneBook" EntityType="dbHospitalRevisitModel.Store.tbPhoneBook" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbPoint_Out" EntityType="dbHospitalRevisitModel.Store.tbPoint_Out" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbReference_Information" EntityType="dbHospitalRevisitModel.Store.tbReference_Information" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbReview_Project_Name" EntityType="dbHospitalRevisitModel.Store.tbReview_Project_Name" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbRole" EntityType="dbHospitalRevisitModel.Store.tbRole" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbStaff" EntityType="dbHospitalRevisitModel.Store.tbStaff" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbStaffDuty" EntityType="dbHospitalRevisitModel.Store.tbStaffDuty" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbVisits_Information" EntityType="dbHospitalRevisitModel.Store.tbVisits_Information" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbVoice_Key" EntityType="dbHospitalRevisitModel.Store.tbVoice_Key" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbVoice_Plan" EntityType="dbHospitalRevisitModel.Store.tbVoice_Plan" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_tbCaller_Question_tbCaller_Title" Association="dbHospitalRevisitModel.Store.FK_tbCaller_Question_tbCaller_Title">
+            <End Role="tbCaller_Title" EntitySet="tbCaller_Title" />
+            <End Role="tbCaller_Question" EntitySet="tbCaller_Question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbCaller_Question_tbInvestigation_Question" Association="dbHospitalRevisitModel.Store.FK_tbCaller_Question_tbInvestigation_Question">
+            <End Role="tbInvestigation_Question" EntitySet="tbInvestigation_Question" />
+            <End Role="tbCaller_Question" EntitySet="tbCaller_Question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbCirculation_tbCirculation" Association="dbHospitalRevisitModel.Store.FK_tbCirculation_tbCirculation">
+            <End Role="tbCirculation" EntitySet="tbCirculation" />
+            <End Role="tbCirculation1" EntitySet="tbCirculation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbCirculation_tbDepartment" Association="dbHospitalRevisitModel.Store.FK_tbCirculation_tbDepartment">
+            <End Role="tbDepartment" EntitySet="tbDepartment" />
+            <End Role="tbCirculation" EntitySet="tbCirculation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbInvestigation_Key_tbInvestigation_Question" Association="dbHospitalRevisitModel.Store.FK_tbInvestigation_Key_tbInvestigation_Question">
+            <End Role="tbInvestigation_Question" EntitySet="tbInvestigation_Question" />
+            <End Role="tbInvestigation_Key" EntitySet="tbInvestigation_Key" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMessage_Sample_tbMessage_Sample" Association="dbHospitalRevisitModel.Store.FK_tbMessage_Sample_tbMessage_Sample">
+            <End Role="tbMessage_Sample" EntitySet="tbMessage_Sample" />
+            <End Role="tbMessage_Sample1" EntitySet="tbMessage_Sample" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMessage_Sample_tbMessage_Sample1" Association="dbHospitalRevisitModel.Store.FK_tbMessage_Sample_tbMessage_Sample1">
+            <End Role="tbMessage_Sample" EntitySet="tbMessage_Sample" />
+            <End Role="tbMessage_Sample1" EntitySet="tbMessage_Sample" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPhoneBook_tbPatient" Association="dbHospitalRevisitModel.Store.FK_tbPhoneBook_tbPatient">
+            <End Role="tbPatient" EntitySet="tbPatient" />
+            <End Role="tbPhoneBook" EntitySet="tbPhoneBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPhoneBook_tbPhoneBook" Association="dbHospitalRevisitModel.Store.FK_tbPhoneBook_tbPhoneBook">
+            <End Role="tbPhoneBook" EntitySet="tbPhoneBook" />
+            <End Role="tbPhoneBook1" EntitySet="tbPhoneBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPlan_Voice_Caller_tbCaller_Title" Association="dbHospitalRevisitModel.Store.FK_tbPlan_Voice_Caller_tbCaller_Title">
+            <End Role="tbCaller_Title" EntitySet="tbCaller_Title" />
+            <End Role="tbVoice_Plan" EntitySet="tbVoice_Plan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPlan_Voice_Caller_tbDiagnosis" Association="dbHospitalRevisitModel.Store.FK_tbPlan_Voice_Caller_tbDiagnosis">
+            <End Role="tbDiagnosis" EntitySet="tbDiagnosis" />
+            <End Role="tbVoice_Plan" EntitySet="tbVoice_Plan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPlan_Voice_Caller_tbPatient" Association="dbHospitalRevisitModel.Store.FK_tbPlan_Voice_Caller_tbPatient">
+            <End Role="tbPatient" EntitySet="tbPatient" />
+            <End Role="tbVoice_Plan" EntitySet="tbVoice_Plan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPoint_Out_tbDeal_Way" Association="dbHospitalRevisitModel.Store.FK_tbPoint_Out_tbDeal_Way">
+            <End Role="tbDeal_Way" EntitySet="tbDeal_Way" />
+            <End Role="tbPoint_Out" EntitySet="tbPoint_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPoint_Out_tbDepartment" Association="dbHospitalRevisitModel.Store.FK_tbPoint_Out_tbDepartment">
+            <End Role="tbDepartment" EntitySet="tbDepartment" />
+            <End Role="tbPoint_Out" EntitySet="tbPoint_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPoint_Out_tbInformation_Register" Association="dbHospitalRevisitModel.Store.FK_tbPoint_Out_tbInformation_Register">
+            <End Role="tbInformation_Register" EntitySet="tbInformation_Register" />
+            <End Role="tbPoint_Out" EntitySet="tbPoint_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPoint_Out_tbStaff" Association="dbHospitalRevisitModel.Store.FK_tbPoint_Out_tbStaff">
+            <End Role="tbStaff" EntitySet="tbStaff" />
+            <End Role="tbPoint_Out" EntitySet="tbPoint_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbReference_Information_tbReference_Information" Association="dbHospitalRevisitModel.Store.FK_tbReference_Information_tbReference_Information">
+            <End Role="tbReference_Information" EntitySet="tbReference_Information" />
+            <End Role="tbReference_Information1" EntitySet="tbReference_Information" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbStaff_tbDepartment" Association="dbHospitalRevisitModel.Store.FK_tbStaff_tbDepartment">
+            <End Role="tbDepartment" EntitySet="tbDepartment" />
+            <End Role="tbStaff" EntitySet="tbStaff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbStaffInfo_tbStaffDuty" Association="dbHospitalRevisitModel.Store.FK_tbStaffInfo_tbStaffDuty">
+            <End Role="tbStaffDuty" EntitySet="tbStaffDuty" />
+            <End Role="tbStaff" EntitySet="tbStaff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbVoice_Key_tbCaller_Title" Association="dbHospitalRevisitModel.Store.FK_tbVoice_Key_tbCaller_Title">
+            <End Role="tbCaller_Title" EntitySet="tbCaller_Title" />
+            <End Role="tbVoice_Key" EntitySet="tbVoice_Key" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbVoice_Key_tbInvestigation_Question" Association="dbHospitalRevisitModel.Store.FK_tbVoice_Key_tbInvestigation_Question">
+            <End Role="tbInvestigation_Question" EntitySet="tbInvestigation_Question" />
+            <End Role="tbVoice_Key" EntitySet="tbVoice_Key" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbVoice_Key_tbVoice_Key" Association="dbHospitalRevisitModel.Store.FK_tbVoice_Key_tbVoice_Key">
+            <End Role="tbVoice_Key" EntitySet="tbVoice_Key" />
+            <End Role="tbVoice_Key1" EntitySet="tbVoice_Key" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbVoice_Key_tbVoice_Plan" Association="dbHospitalRevisitModel.Store.FK_tbVoice_Key_tbVoice_Plan">
+            <End Role="tbVoice_Plan" EntitySet="tbVoice_Plan" />
+            <End Role="tbVoice_Key" EntitySet="tbVoice_Key" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbVoice_Plan_tbVoice_Plan" Association="dbHospitalRevisitModel.Store.FK_tbVoice_Plan_tbVoice_Plan">
+            <End Role="tbVoice_Plan" EntitySet="tbVoice_Plan" />
+            <End Role="tbVoice_Plan1" EntitySet="tbVoice_Plan" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbCaller_Question">
+          <Key>
+            <PropertyRef Name="Caller_Question_ID" />
+          </Key>
+          <Property Name="Caller_Question_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caller_Title_ID" Type="int" />
+          <Property Name="Investigation_Question_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="tbCaller_Title">
+          <Key>
+            <PropertyRef Name="Caller_Title_ID" />
+          </Key>
+          <Property Name="Caller_Title_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caller_Title_Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbCirculation">
+          <Key>
+            <PropertyRef Name="Circulation_ID" />
+          </Key>
+          <Property Name="Circulation_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Processor_Serial_Number" Type="int" Nullable="false" />
+          <Property Name="Department_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="tbContent_Record">
+          <Key>
+            <PropertyRef Name="Content_Record_ID" />
+          </Key>
+          <Property Name="Content_Record_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="nvarchar" MaxLength="200" />
+          <Property Name="Superior_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sequence_Number" Type="int" />
+        </EntityType>
+        <EntityType Name="tbDeal_Way">
+          <Key>
+            <PropertyRef Name="Deal_Way_ID" />
+          </Key>
+          <Property Name="Deal_Way_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Processing_Method" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbDepartment">
+          <Key>
+            <PropertyRef Name="Department_ID" />
+          </Key>
+          <Property Name="Department_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Department_Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbDiagnosis">
+          <Key>
+            <PropertyRef Name="Diagnosis_ID" />
+          </Key>
+          <Property Name="Diagnosis_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="int" />
+          <Property Name="In_Hospital_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="Principal_Diagnosis" Type="nvarchar" MaxLength="200" />
+          <Property Name="Out_Hospital_Advice" Type="nvarchar" MaxLength="200" />
+          <Property Name="Department_ID" Type="nvarchar" MaxLength="30" />
+          <Property Name="In_Hospital_Date" Type="datetime" />
+          <Property Name="Out_Hospital_Date" Type="datetime" />
+          <Property Name="Rediagnose_Date" Type="datetime" />
+          <Property Name="Rediagnose_Department_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rediagnose_Doctor" Type="nvarchar" MaxLength="20" />
+          <Property Name="Is_Assign_Voice_Survey" Type="bit" />
+          <Property Name="Is_Assign_Manual_Survey" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbInformation_Register">
+          <Key>
+            <PropertyRef Name="Information_Register_ID" />
+          </Key>
+          <Property Name="Information_Register_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Personnal_Caller_ID" Type="int" />
+          <Property Name="Consulting_Phone_Number" Type="nvarchar" MaxLength="20" />
+          <Property Name="Air_Time" Type="datetime" />
+          <Property Name="Involve_Content" Type="nvarchar" MaxLength="200" />
+          <Property Name="Involve_Department_ID" Type="int" />
+          <Property Name="Involve_StaffInfo_ID" Type="int" />
+          <Property Name="Involve_Content_Qualitative" Type="nvarchar" MaxLength="100" />
+          <Property Name="Is_Moving" Type="bit" />
+          <Property Name="SOSC_CSR_ID" Type="int" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbInvestigation_Key">
+          <Key>
+            <PropertyRef Name="Investigation_Key_ID" />
+          </Key>
+          <Property Name="Investigation_Key_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Iinvestigatio_Question_ID" Type="int" />
+          <Property Name="Answer_Marked_No" Type="int" />
+          <Property Name="Answer_Content" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbInvestigation_Question">
+          <Key>
+            <PropertyRef Name="Investigation_Question_ID" />
+          </Key>
+          <Property Name="Investigation_Question_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Review_Content" Type="nvarchar" MaxLength="200" />
+          <Property Name="File_Paths" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbMessage_Sample">
+          <Key>
+            <PropertyRef Name="Message_Sample_ID" />
+          </Key>
+          <Property Name="Message_Sample_ID" Type="int" Nullable="false" />
+          <Property Name="Message_Content" Type="nvarchar" MaxLength="100" />
+          <Property Name="MMS_Path" Type="nvarchar" MaxLength="50" />
+          <Property Name="Parent_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="tbMessage_Send_Plan">
+          <Key>
+            <PropertyRef Name="Message_Send_Plan_ID" />
+          </Key>
+          <Property Name="Message_Send_Plan_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Phone_Number" Type="nvarchar" MaxLength="20" />
+          <Property Name="Plan_Send_Time" Type="datetime" />
+          <Property Name="Actual_Send_Time" Type="datetime" />
+          <Property Name="Message_Content" Type="nvarchar" MaxLength="50" />
+          <Property Name="MMS_Path" Type="nvarchar" MaxLength="50" />
+          <Property Name="Is_Send" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbPatient">
+          <Key>
+            <PropertyRef Name="Patient_ID" />
+          </Key>
+          <Property Name="Patient_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Heath_Card" Type="nvarchar" MaxLength="50" />
+          <Property Name="Document_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Patient_Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="Sex" Type="bit" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="Is_Dead" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbPersonnal_Caller">
+          <Key>
+            <PropertyRef Name="Personnal_Caller_ID" />
+          </Key>
+          <Property Name="Personnal_Caller_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="int" />
+          <Property Name="Vioce_Key_Account_ID" Type="int" />
+          <Property Name="Review_Project_Name_ID" Type="int" />
+          <Property Name="SOSC_CSR_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Is_Return_Visit" Type="bit" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbPhoneBook">
+          <Key>
+            <PropertyRef Name="PhoneBook_ID" />
+          </Key>
+          <Property Name="PhoneBook_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="int" />
+          <Property Name="Phone_Number" Type="int" />
+          <Property Name="Phone_Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="patient_relation" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbPoint_Out">
+          <Key>
+            <PropertyRef Name="Point_Out_ID" />
+          </Key>
+          <Property Name="Point_Out_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Information_Register_ID" Type="int" />
+          <Property Name="Deal_Way_ID" Type="int" />
+          <Property Name="Response_Department_ID" Type="int" />
+          <Property Name="Response_Staff_ID" Type="int" />
+          <Property Name="Department_Response_Time" Type="datetime" />
+          <Property Name="Department_Response_Content" Type="nvarchar" MaxLength="200" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbReference_Information">
+          <Key>
+            <PropertyRef Name="Reference_Information_ID" />
+          </Key>
+          <Property Name="Reference_Information_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Information_Content" Type="nvarchar" MaxLength="200" />
+          <Property Name="Parent_ID" Type="int" />
+          <Property Name="Sequence_Number" Type="int" />
+        </EntityType>
+        <EntityType Name="tbReview_Project_Name">
+          <Key>
+            <PropertyRef Name="Review_Project_Name_ID" />
+          </Key>
+          <Property Name="Review_Project_Name_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Review_Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbRole">
+          <Key>
+            <PropertyRef Name="Role_ID" />
+          </Key>
+          <Property Name="Role_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Role_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role_Menus" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="tbStaff">
+          <Key>
+            <PropertyRef Name="Staff_ID" />
+          </Key>
+          <Property Name="Staff_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Staff_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Staff_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="StaffDuty_ID" Type="int" />
+          <Property Name="Department_ID" Type="int" />
+          <Property Name="Phone_Number" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbStaffDuty">
+          <Key>
+            <PropertyRef Name="StaffDuty_ID" />
+          </Key>
+          <Property Name="StaffDuty_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StaffDuty_Name" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbVisits_Information">
+          <Key>
+            <PropertyRef Name="Visits_Information_ID" />
+          </Key>
+          <Property Name="Visits_Information_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="int" />
+          <Property Name="Submit_Date" Type="datetime" />
+          <Property Name="The_Reservation_Department" Type="nvarchar" MaxLength="50" />
+          <Property Name="ZocDoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Records_Generated_Date" Type="datetime" />
+          <Property Name="Is_Exercise" Type="bit" />
+          <Property Name="Exercise_Staff_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbVoice_Key">
+          <Key>
+            <PropertyRef Name="Voice_Key_ID" />
+          </Key>
+          <Property Name="Voice_Key_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Voice_Plan_ID" Type="int" />
+          <Property Name="Caller_Title_ID" Type="int" />
+          <Property Name="Investigation_Question_ID" Type="int" />
+          <Property Name="Answer_Marked_No" Type="nvarchar" MaxLength="5" />
+          <Property Name="Record_Generate_Time" Type="datetime" />
+          <Property Name="Is_Manual_Revisit" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbVoice_Plan">
+          <Key>
+            <PropertyRef Name="Voice_Plan_ID" />
+          </Key>
+          <Property Name="Voice_Plan_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="int" />
+          <Property Name="Diagnosis_ID" Type="int" />
+          <Property Name="Caller_Title_ID" Type="int" />
+          <Property Name="Planning_Time" Type="datetime" />
+          <Property Name="Revisit_Days" Type="datetime" />
+          <Property Name="Is_Revisit" Type="bit" />
+          <Property Name="File_Paths" Type="nvarchar" MaxLength="50" />
+          <Property Name="Is_Answer" Type="bit" />
+          <Property Name="Is_Manual_Revisit" Type="bit" />
+        </EntityType>
+        <Association Name="FK_tbCaller_Question_tbCaller_Title">
+          <End Role="tbCaller_Title" Type="dbHospitalRevisitModel.Store.tbCaller_Title" Multiplicity="0..1" />
+          <End Role="tbCaller_Question" Type="dbHospitalRevisitModel.Store.tbCaller_Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCaller_Title">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Principal>
+            <Dependent Role="tbCaller_Question">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbCaller_Question_tbInvestigation_Question">
+          <End Role="tbInvestigation_Question" Type="dbHospitalRevisitModel.Store.tbInvestigation_Question" Multiplicity="1" />
+          <End Role="tbCaller_Question" Type="dbHospitalRevisitModel.Store.tbCaller_Question" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbInvestigation_Question">
+              <PropertyRef Name="Investigation_Question_ID" />
+            </Principal>
+            <Dependent Role="tbCaller_Question">
+              <PropertyRef Name="Caller_Question_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbCirculation_tbCirculation">
+          <End Role="tbCirculation" Type="dbHospitalRevisitModel.Store.tbCirculation" Multiplicity="1" />
+          <End Role="tbCirculation1" Type="dbHospitalRevisitModel.Store.tbCirculation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbCirculation">
+              <PropertyRef Name="Circulation_ID" />
+            </Principal>
+            <Dependent Role="tbCirculation1">
+              <PropertyRef Name="Circulation_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbCirculation_tbDepartment">
+          <End Role="tbDepartment" Type="dbHospitalRevisitModel.Store.tbDepartment" Multiplicity="0..1" />
+          <End Role="tbCirculation" Type="dbHospitalRevisitModel.Store.tbCirculation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDepartment">
+              <PropertyRef Name="Department_ID" />
+            </Principal>
+            <Dependent Role="tbCirculation">
+              <PropertyRef Name="Department_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbInvestigation_Key_tbInvestigation_Question">
+          <End Role="tbInvestigation_Question" Type="dbHospitalRevisitModel.Store.tbInvestigation_Question" Multiplicity="0..1" />
+          <End Role="tbInvestigation_Key" Type="dbHospitalRevisitModel.Store.tbInvestigation_Key" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbInvestigation_Question">
+              <PropertyRef Name="Investigation_Question_ID" />
+            </Principal>
+            <Dependent Role="tbInvestigation_Key">
+              <PropertyRef Name="Iinvestigatio_Question_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMessage_Sample_tbMessage_Sample">
+          <End Role="tbMessage_Sample" Type="dbHospitalRevisitModel.Store.tbMessage_Sample" Multiplicity="1" />
+          <End Role="tbMessage_Sample1" Type="dbHospitalRevisitModel.Store.tbMessage_Sample" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbMessage_Sample">
+              <PropertyRef Name="Message_Sample_ID" />
+            </Principal>
+            <Dependent Role="tbMessage_Sample1">
+              <PropertyRef Name="Message_Sample_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMessage_Sample_tbMessage_Sample1">
+          <End Role="tbMessage_Sample" Type="dbHospitalRevisitModel.Store.tbMessage_Sample" Multiplicity="1" />
+          <End Role="tbMessage_Sample1" Type="dbHospitalRevisitModel.Store.tbMessage_Sample" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbMessage_Sample">
+              <PropertyRef Name="Message_Sample_ID" />
+            </Principal>
+            <Dependent Role="tbMessage_Sample1">
+              <PropertyRef Name="Message_Sample_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPhoneBook_tbPatient">
+          <End Role="tbPatient" Type="dbHospitalRevisitModel.Store.tbPatient" Multiplicity="0..1" />
+          <End Role="tbPhoneBook" Type="dbHospitalRevisitModel.Store.tbPhoneBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbPatient">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="tbPhoneBook">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPhoneBook_tbPhoneBook">
+          <End Role="tbPhoneBook" Type="dbHospitalRevisitModel.Store.tbPhoneBook" Multiplicity="1" />
+          <End Role="tbPhoneBook1" Type="dbHospitalRevisitModel.Store.tbPhoneBook" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbPhoneBook">
+              <PropertyRef Name="PhoneBook_ID" />
+            </Principal>
+            <Dependent Role="tbPhoneBook1">
+              <PropertyRef Name="PhoneBook_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPlan_Voice_Caller_tbCaller_Title">
+          <End Role="tbCaller_Title" Type="dbHospitalRevisitModel.Store.tbCaller_Title" Multiplicity="0..1" />
+          <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.Store.tbVoice_Plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCaller_Title">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Plan">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPlan_Voice_Caller_tbDiagnosis">
+          <End Role="tbDiagnosis" Type="dbHospitalRevisitModel.Store.tbDiagnosis" Multiplicity="0..1" />
+          <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.Store.tbVoice_Plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDiagnosis">
+              <PropertyRef Name="Diagnosis_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Plan">
+              <PropertyRef Name="Diagnosis_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPlan_Voice_Caller_tbPatient">
+          <End Role="tbPatient" Type="dbHospitalRevisitModel.Store.tbPatient" Multiplicity="0..1" />
+          <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.Store.tbVoice_Plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbPatient">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Plan">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPoint_Out_tbDeal_Way">
+          <End Role="tbDeal_Way" Type="dbHospitalRevisitModel.Store.tbDeal_Way" Multiplicity="0..1" />
+          <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.Store.tbPoint_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDeal_Way">
+              <PropertyRef Name="Deal_Way_ID" />
+            </Principal>
+            <Dependent Role="tbPoint_Out">
+              <PropertyRef Name="Deal_Way_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPoint_Out_tbDepartment">
+          <End Role="tbDepartment" Type="dbHospitalRevisitModel.Store.tbDepartment" Multiplicity="0..1" />
+          <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.Store.tbPoint_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDepartment">
+              <PropertyRef Name="Department_ID" />
+            </Principal>
+            <Dependent Role="tbPoint_Out">
+              <PropertyRef Name="Response_Department_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPoint_Out_tbInformation_Register">
+          <End Role="tbInformation_Register" Type="dbHospitalRevisitModel.Store.tbInformation_Register" Multiplicity="0..1" />
+          <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.Store.tbPoint_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbInformation_Register">
+              <PropertyRef Name="Information_Register_ID" />
+            </Principal>
+            <Dependent Role="tbPoint_Out">
+              <PropertyRef Name="Information_Register_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPoint_Out_tbStaff">
+          <End Role="tbStaff" Type="dbHospitalRevisitModel.Store.tbStaff" Multiplicity="0..1" />
+          <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.Store.tbPoint_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbStaff">
+              <PropertyRef Name="Staff_ID" />
+            </Principal>
+            <Dependent Role="tbPoint_Out">
+              <PropertyRef Name="Response_Staff_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbReference_Information_tbReference_Information">
+          <End Role="tbReference_Information" Type="dbHospitalRevisitModel.Store.tbReference_Information" Multiplicity="1" />
+          <End Role="tbReference_Information1" Type="dbHospitalRevisitModel.Store.tbReference_Information" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbReference_Information">
+              <PropertyRef Name="Reference_Information_ID" />
+            </Principal>
+            <Dependent Role="tbReference_Information1">
+              <PropertyRef Name="Reference_Information_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbStaff_tbDepartment">
+          <End Role="tbDepartment" Type="dbHospitalRevisitModel.Store.tbDepartment" Multiplicity="0..1" />
+          <End Role="tbStaff" Type="dbHospitalRevisitModel.Store.tbStaff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDepartment">
+              <PropertyRef Name="Department_ID" />
+            </Principal>
+            <Dependent Role="tbStaff">
+              <PropertyRef Name="Department_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbStaffInfo_tbStaffDuty">
+          <End Role="tbStaffDuty" Type="dbHospitalRevisitModel.Store.tbStaffDuty" Multiplicity="0..1" />
+          <End Role="tbStaff" Type="dbHospitalRevisitModel.Store.tbStaff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbStaffDuty">
+              <PropertyRef Name="StaffDuty_ID" />
+            </Principal>
+            <Dependent Role="tbStaff">
+              <PropertyRef Name="StaffDuty_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbVoice_Key_tbCaller_Title">
+          <End Role="tbCaller_Title" Type="dbHospitalRevisitModel.Store.tbCaller_Title" Multiplicity="0..1" />
+          <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.Store.tbVoice_Key" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCaller_Title">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Key">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbVoice_Key_tbInvestigation_Question">
+          <End Role="tbInvestigation_Question" Type="dbHospitalRevisitModel.Store.tbInvestigation_Question" Multiplicity="0..1" />
+          <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.Store.tbVoice_Key" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbInvestigation_Question">
+              <PropertyRef Name="Investigation_Question_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Key">
+              <PropertyRef Name="Investigation_Question_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbVoice_Key_tbVoice_Key">
+          <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.Store.tbVoice_Key" Multiplicity="1" />
+          <End Role="tbVoice_Key1" Type="dbHospitalRevisitModel.Store.tbVoice_Key" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbVoice_Key">
+              <PropertyRef Name="Voice_Key_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Key1">
+              <PropertyRef Name="Voice_Key_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbVoice_Key_tbVoice_Plan">
+          <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.Store.tbVoice_Plan" Multiplicity="0..1" />
+          <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.Store.tbVoice_Key" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbVoice_Plan">
+              <PropertyRef Name="Voice_Plan_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Key">
+              <PropertyRef Name="Voice_Plan_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbVoice_Plan_tbVoice_Plan">
+          <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.Store.tbVoice_Plan" Multiplicity="1" />
+          <End Role="tbVoice_Plan1" Type="dbHospitalRevisitModel.Store.tbVoice_Plan" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbVoice_Plan">
+              <PropertyRef Name="Voice_Plan_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Plan1">
+              <PropertyRef Name="Voice_Plan_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbHospitalRevisitModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="dbHospitalRevisitEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbCaller_Question" EntityType="dbHospitalRevisitModel.tbCaller_Question" />
+          <EntitySet Name="tbCaller_Title" EntityType="dbHospitalRevisitModel.tbCaller_Title" />
+          <EntitySet Name="tbCirculation" EntityType="dbHospitalRevisitModel.tbCirculation" />
+          <EntitySet Name="tbContent_Record" EntityType="dbHospitalRevisitModel.tbContent_Record" />
+          <EntitySet Name="tbDeal_Way" EntityType="dbHospitalRevisitModel.tbDeal_Way" />
+          <EntitySet Name="tbDepartment" EntityType="dbHospitalRevisitModel.tbDepartment" />
+          <EntitySet Name="tbDiagnosis" EntityType="dbHospitalRevisitModel.tbDiagnosis" />
+          <EntitySet Name="tbInformation_Register" EntityType="dbHospitalRevisitModel.tbInformation_Register" />
+          <EntitySet Name="tbInvestigation_Key" EntityType="dbHospitalRevisitModel.tbInvestigation_Key" />
+          <EntitySet Name="tbInvestigation_Question" EntityType="dbHospitalRevisitModel.tbInvestigation_Question" />
+          <EntitySet Name="tbMessage_Sample" EntityType="dbHospitalRevisitModel.tbMessage_Sample" />
+          <EntitySet Name="tbMessage_Send_Plan" EntityType="dbHospitalRevisitModel.tbMessage_Send_Plan" />
+          <EntitySet Name="tbPatient" EntityType="dbHospitalRevisitModel.tbPatient" />
+          <EntitySet Name="tbPersonnal_Caller" EntityType="dbHospitalRevisitModel.tbPersonnal_Caller" />
+          <EntitySet Name="tbPhoneBook" EntityType="dbHospitalRevisitModel.tbPhoneBook" />
+          <EntitySet Name="tbPoint_Out" EntityType="dbHospitalRevisitModel.tbPoint_Out" />
+          <EntitySet Name="tbReference_Information" EntityType="dbHospitalRevisitModel.tbReference_Information" />
+          <EntitySet Name="tbReview_Project_Name" EntityType="dbHospitalRevisitModel.tbReview_Project_Name" />
+          <EntitySet Name="tbRole" EntityType="dbHospitalRevisitModel.tbRole" />
+          <EntitySet Name="tbStaff" EntityType="dbHospitalRevisitModel.tbStaff" />
+          <EntitySet Name="tbStaffDuty" EntityType="dbHospitalRevisitModel.tbStaffDuty" />
+          <EntitySet Name="tbVisits_Information" EntityType="dbHospitalRevisitModel.tbVisits_Information" />
+          <EntitySet Name="tbVoice_Key" EntityType="dbHospitalRevisitModel.tbVoice_Key" />
+          <EntitySet Name="tbVoice_Plan" EntityType="dbHospitalRevisitModel.tbVoice_Plan" />
+          <AssociationSet Name="FK_tbCaller_Question_tbCaller_Title" Association="dbHospitalRevisitModel.FK_tbCaller_Question_tbCaller_Title">
+            <End Role="tbCaller_Title" EntitySet="tbCaller_Title" />
+            <End Role="tbCaller_Question" EntitySet="tbCaller_Question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbCaller_Question_tbInvestigation_Question" Association="dbHospitalRevisitModel.FK_tbCaller_Question_tbInvestigation_Question">
+            <End Role="tbInvestigation_Question" EntitySet="tbInvestigation_Question" />
+            <End Role="tbCaller_Question" EntitySet="tbCaller_Question" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPlan_Voice_Caller_tbCaller_Title" Association="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbCaller_Title">
+            <End Role="tbCaller_Title" EntitySet="tbCaller_Title" />
+            <End Role="tbVoice_Plan" EntitySet="tbVoice_Plan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbVoice_Key_tbCaller_Title" Association="dbHospitalRevisitModel.FK_tbVoice_Key_tbCaller_Title">
+            <End Role="tbCaller_Title" EntitySet="tbCaller_Title" />
+            <End Role="tbVoice_Key" EntitySet="tbVoice_Key" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbCirculation_tbCirculation" Association="dbHospitalRevisitModel.FK_tbCirculation_tbCirculation">
+            <End Role="tbCirculation" EntitySet="tbCirculation" />
+            <End Role="tbCirculation1" EntitySet="tbCirculation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbCirculation_tbDepartment" Association="dbHospitalRevisitModel.FK_tbCirculation_tbDepartment">
+            <End Role="tbDepartment" EntitySet="tbDepartment" />
+            <End Role="tbCirculation" EntitySet="tbCirculation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPoint_Out_tbDeal_Way" Association="dbHospitalRevisitModel.FK_tbPoint_Out_tbDeal_Way">
+            <End Role="tbDeal_Way" EntitySet="tbDeal_Way" />
+            <End Role="tbPoint_Out" EntitySet="tbPoint_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPoint_Out_tbDepartment" Association="dbHospitalRevisitModel.FK_tbPoint_Out_tbDepartment">
+            <End Role="tbDepartment" EntitySet="tbDepartment" />
+            <End Role="tbPoint_Out" EntitySet="tbPoint_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbStaff_tbDepartment" Association="dbHospitalRevisitModel.FK_tbStaff_tbDepartment">
+            <End Role="tbDepartment" EntitySet="tbDepartment" />
+            <End Role="tbStaff" EntitySet="tbStaff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPlan_Voice_Caller_tbDiagnosis" Association="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbDiagnosis">
+            <End Role="tbDiagnosis" EntitySet="tbDiagnosis" />
+            <End Role="tbVoice_Plan" EntitySet="tbVoice_Plan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPoint_Out_tbInformation_Register" Association="dbHospitalRevisitModel.FK_tbPoint_Out_tbInformation_Register">
+            <End Role="tbInformation_Register" EntitySet="tbInformation_Register" />
+            <End Role="tbPoint_Out" EntitySet="tbPoint_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbInvestigation_Key_tbInvestigation_Question" Association="dbHospitalRevisitModel.FK_tbInvestigation_Key_tbInvestigation_Question">
+            <End Role="tbInvestigation_Question" EntitySet="tbInvestigation_Question" />
+            <End Role="tbInvestigation_Key" EntitySet="tbInvestigation_Key" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbVoice_Key_tbInvestigation_Question" Association="dbHospitalRevisitModel.FK_tbVoice_Key_tbInvestigation_Question">
+            <End Role="tbInvestigation_Question" EntitySet="tbInvestigation_Question" />
+            <End Role="tbVoice_Key" EntitySet="tbVoice_Key" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMessage_Sample_tbMessage_Sample" Association="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample">
+            <End Role="tbMessage_Sample" EntitySet="tbMessage_Sample" />
+            <End Role="tbMessage_Sample1" EntitySet="tbMessage_Sample" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbMessage_Sample_tbMessage_Sample1" Association="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample1">
+            <End Role="tbMessage_Sample" EntitySet="tbMessage_Sample" />
+            <End Role="tbMessage_Sample1" EntitySet="tbMessage_Sample" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPhoneBook_tbPatient" Association="dbHospitalRevisitModel.FK_tbPhoneBook_tbPatient">
+            <End Role="tbPatient" EntitySet="tbPatient" />
+            <End Role="tbPhoneBook" EntitySet="tbPhoneBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPlan_Voice_Caller_tbPatient" Association="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbPatient">
+            <End Role="tbPatient" EntitySet="tbPatient" />
+            <End Role="tbVoice_Plan" EntitySet="tbVoice_Plan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPhoneBook_tbPhoneBook" Association="dbHospitalRevisitModel.FK_tbPhoneBook_tbPhoneBook">
+            <End Role="tbPhoneBook" EntitySet="tbPhoneBook" />
+            <End Role="tbPhoneBook1" EntitySet="tbPhoneBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbPoint_Out_tbStaff" Association="dbHospitalRevisitModel.FK_tbPoint_Out_tbStaff">
+            <End Role="tbStaff" EntitySet="tbStaff" />
+            <End Role="tbPoint_Out" EntitySet="tbPoint_Out" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbReference_Information_tbReference_Information" Association="dbHospitalRevisitModel.FK_tbReference_Information_tbReference_Information">
+            <End Role="tbReference_Information" EntitySet="tbReference_Information" />
+            <End Role="tbReference_Information1" EntitySet="tbReference_Information" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbStaffInfo_tbStaffDuty" Association="dbHospitalRevisitModel.FK_tbStaffInfo_tbStaffDuty">
+            <End Role="tbStaffDuty" EntitySet="tbStaffDuty" />
+            <End Role="tbStaff" EntitySet="tbStaff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbVoice_Key_tbVoice_Key" Association="dbHospitalRevisitModel.FK_tbVoice_Key_tbVoice_Key">
+            <End Role="tbVoice_Key" EntitySet="tbVoice_Key" />
+            <End Role="tbVoice_Key1" EntitySet="tbVoice_Key" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbVoice_Key_tbVoice_Plan" Association="dbHospitalRevisitModel.FK_tbVoice_Key_tbVoice_Plan">
+            <End Role="tbVoice_Plan" EntitySet="tbVoice_Plan" />
+            <End Role="tbVoice_Key" EntitySet="tbVoice_Key" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbVoice_Plan_tbVoice_Plan" Association="dbHospitalRevisitModel.FK_tbVoice_Plan_tbVoice_Plan">
+            <End Role="tbVoice_Plan" EntitySet="tbVoice_Plan" />
+            <End Role="tbVoice_Plan1" EntitySet="tbVoice_Plan" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbCaller_Question">
+          <Key>
+            <PropertyRef Name="Caller_Question_ID" />
+          </Key>
+          <Property Name="Caller_Question_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Caller_Title_ID" Type="Int32" />
+          <Property Name="Investigation_Question_ID" Type="Int32" />
+          <NavigationProperty Name="tbCaller_Title" Relationship="dbHospitalRevisitModel.FK_tbCaller_Question_tbCaller_Title" FromRole="tbCaller_Question" ToRole="tbCaller_Title" />
+          <NavigationProperty Name="tbInvestigation_Question" Relationship="dbHospitalRevisitModel.FK_tbCaller_Question_tbInvestigation_Question" FromRole="tbCaller_Question" ToRole="tbInvestigation_Question" />
+        </EntityType>
+        <EntityType Name="tbCaller_Title">
+          <Key>
+            <PropertyRef Name="Caller_Title_ID" />
+          </Key>
+          <Property Name="Caller_Title_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Caller_Title_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbCaller_Question" Relationship="dbHospitalRevisitModel.FK_tbCaller_Question_tbCaller_Title" FromRole="tbCaller_Title" ToRole="tbCaller_Question" />
+          <NavigationProperty Name="tbVoice_Plan" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbCaller_Title" FromRole="tbCaller_Title" ToRole="tbVoice_Plan" />
+          <NavigationProperty Name="tbVoice_Key" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbCaller_Title" FromRole="tbCaller_Title" ToRole="tbVoice_Key" />
+        </EntityType>
+        <EntityType Name="tbCirculation">
+          <Key>
+            <PropertyRef Name="Circulation_ID" />
+          </Key>
+          <Property Name="Circulation_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Processor_Serial_Number" Type="Int32" Nullable="false" />
+          <Property Name="Department_ID" Type="Int32" />
+          <NavigationProperty Name="tbCirculation1" Relationship="dbHospitalRevisitModel.FK_tbCirculation_tbCirculation" FromRole="tbCirculation" ToRole="tbCirculation1" />
+          <NavigationProperty Name="tbCirculation2" Relationship="dbHospitalRevisitModel.FK_tbCirculation_tbCirculation" FromRole="tbCirculation1" ToRole="tbCirculation" />
+          <NavigationProperty Name="tbDepartment" Relationship="dbHospitalRevisitModel.FK_tbCirculation_tbDepartment" FromRole="tbCirculation" ToRole="tbDepartment" />
+        </EntityType>
+        <EntityType Name="tbContent_Record">
+          <Key>
+            <PropertyRef Name="Content_Record_ID" />
+          </Key>
+          <Property Name="Content_Record_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Superior_No" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Sequence_Number" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbDeal_Way">
+          <Key>
+            <PropertyRef Name="Deal_Way_ID" />
+          </Key>
+          <Property Name="Deal_Way_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Processing_Method" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbPoint_Out" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbDeal_Way" FromRole="tbDeal_Way" ToRole="tbPoint_Out" />
+        </EntityType>
+        <EntityType Name="tbDepartment">
+          <Key>
+            <PropertyRef Name="Department_ID" />
+          </Key>
+          <Property Name="Department_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Department_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbCirculation" Relationship="dbHospitalRevisitModel.FK_tbCirculation_tbDepartment" FromRole="tbDepartment" ToRole="tbCirculation" />
+          <NavigationProperty Name="tbPoint_Out" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbDepartment" FromRole="tbDepartment" ToRole="tbPoint_Out" />
+          <NavigationProperty Name="tbStaff" Relationship="dbHospitalRevisitModel.FK_tbStaff_tbDepartment" FromRole="tbDepartment" ToRole="tbStaff" />
+        </EntityType>
+        <EntityType Name="tbDiagnosis">
+          <Key>
+            <PropertyRef Name="Diagnosis_ID" />
+          </Key>
+          <Property Name="Diagnosis_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="Int32" />
+          <Property Name="In_Hospital_NO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Principal_Diagnosis" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Out_Hospital_Advice" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Department_ID" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="In_Hospital_Date" Type="DateTime" Precision="3" />
+          <Property Name="Out_Hospital_Date" Type="DateTime" Precision="3" />
+          <Property Name="Rediagnose_Date" Type="DateTime" Precision="3" />
+          <Property Name="Rediagnose_Department_ID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Rediagnose_Doctor" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Assign_Voice_Survey" Type="Boolean" />
+          <Property Name="Is_Assign_Manual_Survey" Type="Boolean" />
+          <NavigationProperty Name="tbVoice_Plan" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbDiagnosis" FromRole="tbDiagnosis" ToRole="tbVoice_Plan" />
+        </EntityType>
+        <EntityType Name="tbInformation_Register">
+          <Key>
+            <PropertyRef Name="Information_Register_ID" />
+          </Key>
+          <Property Name="Information_Register_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Personnal_Caller_ID" Type="Int32" />
+          <Property Name="Consulting_Phone_Number" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Air_Time" Type="DateTime" Precision="3" />
+          <Property Name="Involve_Content" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Involve_Department_ID" Type="Int32" />
+          <Property Name="Involve_StaffInfo_ID" Type="Int32" />
+          <Property Name="Involve_Content_Qualitative" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Moving" Type="Boolean" />
+          <Property Name="SOSC_CSR_ID" Type="Int32" />
+          <Property Name="Remarks" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbPoint_Out" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbInformation_Register" FromRole="tbInformation_Register" ToRole="tbPoint_Out" />
+        </EntityType>
+        <EntityType Name="tbInvestigation_Key">
+          <Key>
+            <PropertyRef Name="Investigation_Key_ID" />
+          </Key>
+          <Property Name="Investigation_Key_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Iinvestigatio_Question_ID" Type="Int32" />
+          <Property Name="Answer_Marked_No" Type="Int32" />
+          <Property Name="Answer_Content" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbInvestigation_Question" Relationship="dbHospitalRevisitModel.FK_tbInvestigation_Key_tbInvestigation_Question" FromRole="tbInvestigation_Key" ToRole="tbInvestigation_Question" />
+        </EntityType>
+        <EntityType Name="tbInvestigation_Question">
+          <Key>
+            <PropertyRef Name="Investigation_Question_ID" />
+          </Key>
+          <Property Name="Investigation_Question_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Review_Content" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="File_Paths" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbCaller_Question" Relationship="dbHospitalRevisitModel.FK_tbCaller_Question_tbInvestigation_Question" FromRole="tbInvestigation_Question" ToRole="tbCaller_Question" />
+          <NavigationProperty Name="tbInvestigation_Key" Relationship="dbHospitalRevisitModel.FK_tbInvestigation_Key_tbInvestigation_Question" FromRole="tbInvestigation_Question" ToRole="tbInvestigation_Key" />
+          <NavigationProperty Name="tbVoice_Key" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbInvestigation_Question" FromRole="tbInvestigation_Question" ToRole="tbVoice_Key" />
+        </EntityType>
+        <EntityType Name="tbMessage_Sample">
+          <Key>
+            <PropertyRef Name="Message_Sample_ID" />
+          </Key>
+          <Property Name="Message_Sample_ID" Type="Int32" Nullable="false" />
+          <Property Name="Message_Content" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="MMS_Path" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Parent_ID" Type="Int32" />
+          <NavigationProperty Name="tbMessage_Sample1" Relationship="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample" FromRole="tbMessage_Sample" ToRole="tbMessage_Sample1" />
+          <NavigationProperty Name="tbMessage_Sample2" Relationship="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample" FromRole="tbMessage_Sample1" ToRole="tbMessage_Sample" />
+          <NavigationProperty Name="tbMessage_Sample11" Relationship="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample1" FromRole="tbMessage_Sample" ToRole="tbMessage_Sample1" />
+          <NavigationProperty Name="tbMessage_Sample3" Relationship="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample1" FromRole="tbMessage_Sample1" ToRole="tbMessage_Sample" />
+        </EntityType>
+        <EntityType Name="tbMessage_Send_Plan">
+          <Key>
+            <PropertyRef Name="Message_Send_Plan_ID" />
+          </Key>
+          <Property Name="Message_Send_Plan_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Phone_Number" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Plan_Send_Time" Type="DateTime" Precision="3" />
+          <Property Name="Actual_Send_Time" Type="DateTime" Precision="3" />
+          <Property Name="Message_Content" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MMS_Path" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Send" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbPatient">
+          <Key>
+            <PropertyRef Name="Patient_ID" />
+          </Key>
+          <Property Name="Patient_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Heath_Card" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Document_No" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Patient_Name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Sex" Type="Boolean" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="Address" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Dead" Type="Boolean" />
+          <NavigationProperty Name="tbPhoneBook" Relationship="dbHospitalRevisitModel.FK_tbPhoneBook_tbPatient" FromRole="tbPatient" ToRole="tbPhoneBook" />
+          <NavigationProperty Name="tbVoice_Plan" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbPatient" FromRole="tbPatient" ToRole="tbVoice_Plan" />
+        </EntityType>
+        <EntityType Name="tbPersonnal_Caller">
+          <Key>
+            <PropertyRef Name="Personnal_Caller_ID" />
+          </Key>
+          <Property Name="Personnal_Caller_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="Int32" />
+          <Property Name="Vioce_Key_Account_ID" Type="Int32" />
+          <Property Name="Review_Project_Name_ID" Type="Int32" />
+          <Property Name="SOSC_CSR_ID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Return_Visit" Type="Boolean" />
+          <Property Name="Remarks" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbPhoneBook">
+          <Key>
+            <PropertyRef Name="PhoneBook_ID" />
+          </Key>
+          <Property Name="PhoneBook_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="Int32" />
+          <Property Name="Phone_Number" Type="Int32" />
+          <Property Name="Phone_Name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="patient_relation" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbPatient" Relationship="dbHospitalRevisitModel.FK_tbPhoneBook_tbPatient" FromRole="tbPhoneBook" ToRole="tbPatient" />
+          <NavigationProperty Name="tbPhoneBook1" Relationship="dbHospitalRevisitModel.FK_tbPhoneBook_tbPhoneBook" FromRole="tbPhoneBook" ToRole="tbPhoneBook1" />
+          <NavigationProperty Name="tbPhoneBook2" Relationship="dbHospitalRevisitModel.FK_tbPhoneBook_tbPhoneBook" FromRole="tbPhoneBook1" ToRole="tbPhoneBook" />
+        </EntityType>
+        <EntityType Name="tbPoint_Out">
+          <Key>
+            <PropertyRef Name="Point_Out_ID" />
+          </Key>
+          <Property Name="Point_Out_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Information_Register_ID" Type="Int32" />
+          <Property Name="Deal_Way_ID" Type="Int32" />
+          <Property Name="Response_Department_ID" Type="Int32" />
+          <Property Name="Response_Staff_ID" Type="Int32" />
+          <Property Name="Department_Response_Time" Type="DateTime" Precision="3" />
+          <Property Name="Department_Response_Content" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Remarks" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbDeal_Way" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbDeal_Way" FromRole="tbPoint_Out" ToRole="tbDeal_Way" />
+          <NavigationProperty Name="tbDepartment" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbDepartment" FromRole="tbPoint_Out" ToRole="tbDepartment" />
+          <NavigationProperty Name="tbInformation_Register" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbInformation_Register" FromRole="tbPoint_Out" ToRole="tbInformation_Register" />
+          <NavigationProperty Name="tbStaff" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbStaff" FromRole="tbPoint_Out" ToRole="tbStaff" />
+        </EntityType>
+        <EntityType Name="tbReference_Information">
+          <Key>
+            <PropertyRef Name="Reference_Information_ID" />
+          </Key>
+          <Property Name="Reference_Information_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Information_Content" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Parent_ID" Type="Int32" />
+          <Property Name="Sequence_Number" Type="Int32" />
+          <NavigationProperty Name="tbReference_Information1" Relationship="dbHospitalRevisitModel.FK_tbReference_Information_tbReference_Information" FromRole="tbReference_Information" ToRole="tbReference_Information1" />
+          <NavigationProperty Name="tbReference_Information2" Relationship="dbHospitalRevisitModel.FK_tbReference_Information_tbReference_Information" FromRole="tbReference_Information1" ToRole="tbReference_Information" />
+        </EntityType>
+        <EntityType Name="tbReview_Project_Name">
+          <Key>
+            <PropertyRef Name="Review_Project_Name_ID" />
+          </Key>
+          <Property Name="Review_Project_Name_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Review_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbRole">
+          <Key>
+            <PropertyRef Name="Role_ID" />
+          </Key>
+          <Property Name="Role_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Role_Menus" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbStaff">
+          <Key>
+            <PropertyRef Name="Staff_ID" />
+          </Key>
+          <Property Name="Staff_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Staff_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Staff_No" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StaffDuty_ID" Type="Int32" />
+          <Property Name="Department_ID" Type="Int32" />
+          <Property Name="Phone_Number" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="tbDepartment" Relationship="dbHospitalRevisitModel.FK_tbStaff_tbDepartment" FromRole="tbStaff" ToRole="tbDepartment" />
+          <NavigationProperty Name="tbPoint_Out" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbStaff" FromRole="tbStaff" ToRole="tbPoint_Out" />
+          <NavigationProperty Name="tbStaffDuty" Relationship="dbHospitalRevisitModel.FK_tbStaffInfo_tbStaffDuty" FromRole="tbStaff" ToRole="tbStaffDuty" />
+        </EntityType>
+        <EntityType Name="tbStaffDuty">
+          <Key>
+            <PropertyRef Name="StaffDuty_ID" />
+          </Key>
+          <Property Name="StaffDuty_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StaffDuty_Name" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="tbStaff" Relationship="dbHospitalRevisitModel.FK_tbStaffInfo_tbStaffDuty" FromRole="tbStaffDuty" ToRole="tbStaff" />
+        </EntityType>
+        <EntityType Name="tbVisits_Information">
+          <Key>
+            <PropertyRef Name="Visits_Information_ID" />
+          </Key>
+          <Property Name="Visits_Information_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="Int32" />
+          <Property Name="Submit_Date" Type="DateTime" Precision="3" />
+          <Property Name="The_Reservation_Department" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ZocDoc" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Records_Generated_Date" Type="DateTime" Precision="3" />
+          <Property Name="Is_Exercise" Type="Boolean" />
+          <Property Name="Exercise_Staff_No" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Remarks" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tbVoice_Key">
+          <Key>
+            <PropertyRef Name="Voice_Key_ID" />
+          </Key>
+          <Property Name="Voice_Key_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Voice_Plan_ID" Type="Int32" />
+          <Property Name="Caller_Title_ID" Type="Int32" />
+          <Property Name="Investigation_Question_ID" Type="Int32" />
+          <Property Name="Answer_Marked_No" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+          <Property Name="Record_Generate_Time" Type="DateTime" Precision="3" />
+          <Property Name="Is_Manual_Revisit" Type="Boolean" />
+          <NavigationProperty Name="tbCaller_Title" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbCaller_Title" FromRole="tbVoice_Key" ToRole="tbCaller_Title" />
+          <NavigationProperty Name="tbInvestigation_Question" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbInvestigation_Question" FromRole="tbVoice_Key" ToRole="tbInvestigation_Question" />
+          <NavigationProperty Name="tbVoice_Key1" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbVoice_Key" FromRole="tbVoice_Key" ToRole="tbVoice_Key1" />
+          <NavigationProperty Name="tbVoice_Key2" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbVoice_Key" FromRole="tbVoice_Key1" ToRole="tbVoice_Key" />
+          <NavigationProperty Name="tbVoice_Plan" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbVoice_Plan" FromRole="tbVoice_Key" ToRole="tbVoice_Plan" />
+        </EntityType>
+        <EntityType Name="tbVoice_Plan">
+          <Key>
+            <PropertyRef Name="Voice_Plan_ID" />
+          </Key>
+          <Property Name="Voice_Plan_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="Int32" />
+          <Property Name="Diagnosis_ID" Type="Int32" />
+          <Property Name="Caller_Title_ID" Type="Int32" />
+          <Property Name="Planning_Time" Type="DateTime" Precision="3" />
+          <Property Name="Revisit_Days" Type="DateTime" Precision="3" />
+          <Property Name="Is_Revisit" Type="Boolean" />
+          <Property Name="File_Paths" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Answer" Type="Boolean" />
+          <Property Name="Is_Manual_Revisit" Type="Boolean" />
+          <NavigationProperty Name="tbCaller_Title" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbCaller_Title" FromRole="tbVoice_Plan" ToRole="tbCaller_Title" />
+          <NavigationProperty Name="tbDiagnosis" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbDiagnosis" FromRole="tbVoice_Plan" ToRole="tbDiagnosis" />
+          <NavigationProperty Name="tbPatient" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbPatient" FromRole="tbVoice_Plan" ToRole="tbPatient" />
+          <NavigationProperty Name="tbVoice_Key" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbVoice_Plan" FromRole="tbVoice_Plan" ToRole="tbVoice_Key" />
+          <NavigationProperty Name="tbVoice_Plan1" Relationship="dbHospitalRevisitModel.FK_tbVoice_Plan_tbVoice_Plan" FromRole="tbVoice_Plan" ToRole="tbVoice_Plan1" />
+          <NavigationProperty Name="tbVoice_Plan2" Relationship="dbHospitalRevisitModel.FK_tbVoice_Plan_tbVoice_Plan" FromRole="tbVoice_Plan1" ToRole="tbVoice_Plan" />
+        </EntityType>
+        <Association Name="FK_tbCaller_Question_tbCaller_Title">
+          <End Role="tbCaller_Title" Type="dbHospitalRevisitModel.tbCaller_Title" Multiplicity="0..1" />
+          <End Role="tbCaller_Question" Type="dbHospitalRevisitModel.tbCaller_Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCaller_Title">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Principal>
+            <Dependent Role="tbCaller_Question">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbCaller_Question_tbInvestigation_Question">
+          <End Role="tbInvestigation_Question" Type="dbHospitalRevisitModel.tbInvestigation_Question" Multiplicity="1" />
+          <End Role="tbCaller_Question" Type="dbHospitalRevisitModel.tbCaller_Question" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbInvestigation_Question">
+              <PropertyRef Name="Investigation_Question_ID" />
+            </Principal>
+            <Dependent Role="tbCaller_Question">
+              <PropertyRef Name="Caller_Question_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPlan_Voice_Caller_tbCaller_Title">
+          <End Role="tbCaller_Title" Type="dbHospitalRevisitModel.tbCaller_Title" Multiplicity="0..1" />
+          <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCaller_Title">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Plan">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbVoice_Key_tbCaller_Title">
+          <End Role="tbCaller_Title" Type="dbHospitalRevisitModel.tbCaller_Title" Multiplicity="0..1" />
+          <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.tbVoice_Key" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCaller_Title">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Key">
+              <PropertyRef Name="Caller_Title_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbCirculation_tbCirculation">
+          <End Role="tbCirculation" Type="dbHospitalRevisitModel.tbCirculation" Multiplicity="1" />
+          <End Role="tbCirculation1" Type="dbHospitalRevisitModel.tbCirculation" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbCirculation">
+              <PropertyRef Name="Circulation_ID" />
+            </Principal>
+            <Dependent Role="tbCirculation1">
+              <PropertyRef Name="Circulation_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbCirculation_tbDepartment">
+          <End Role="tbDepartment" Type="dbHospitalRevisitModel.tbDepartment" Multiplicity="0..1" />
+          <End Role="tbCirculation" Type="dbHospitalRevisitModel.tbCirculation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDepartment">
+              <PropertyRef Name="Department_ID" />
+            </Principal>
+            <Dependent Role="tbCirculation">
+              <PropertyRef Name="Department_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPoint_Out_tbDeal_Way">
+          <End Role="tbDeal_Way" Type="dbHospitalRevisitModel.tbDeal_Way" Multiplicity="0..1" />
+          <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.tbPoint_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDeal_Way">
+              <PropertyRef Name="Deal_Way_ID" />
+            </Principal>
+            <Dependent Role="tbPoint_Out">
+              <PropertyRef Name="Deal_Way_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPoint_Out_tbDepartment">
+          <End Role="tbDepartment" Type="dbHospitalRevisitModel.tbDepartment" Multiplicity="0..1" />
+          <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.tbPoint_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDepartment">
+              <PropertyRef Name="Department_ID" />
+            </Principal>
+            <Dependent Role="tbPoint_Out">
+              <PropertyRef Name="Response_Department_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbStaff_tbDepartment">
+          <End Role="tbDepartment" Type="dbHospitalRevisitModel.tbDepartment" Multiplicity="0..1" />
+          <End Role="tbStaff" Type="dbHospitalRevisitModel.tbStaff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDepartment">
+              <PropertyRef Name="Department_ID" />
+            </Principal>
+            <Dependent Role="tbStaff">
+              <PropertyRef Name="Department_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPlan_Voice_Caller_tbDiagnosis">
+          <End Role="tbDiagnosis" Type="dbHospitalRevisitModel.tbDiagnosis" Multiplicity="0..1" />
+          <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbDiagnosis">
+              <PropertyRef Name="Diagnosis_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Plan">
+              <PropertyRef Name="Diagnosis_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPoint_Out_tbInformation_Register">
+          <End Role="tbInformation_Register" Type="dbHospitalRevisitModel.tbInformation_Register" Multiplicity="0..1" />
+          <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.tbPoint_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbInformation_Register">
+              <PropertyRef Name="Information_Register_ID" />
+            </Principal>
+            <Dependent Role="tbPoint_Out">
+              <PropertyRef Name="Information_Register_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbInvestigation_Key_tbInvestigation_Question">
+          <End Role="tbInvestigation_Question" Type="dbHospitalRevisitModel.tbInvestigation_Question" Multiplicity="0..1" />
+          <End Role="tbInvestigation_Key" Type="dbHospitalRevisitModel.tbInvestigation_Key" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbInvestigation_Question">
+              <PropertyRef Name="Investigation_Question_ID" />
+            </Principal>
+            <Dependent Role="tbInvestigation_Key">
+              <PropertyRef Name="Iinvestigatio_Question_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbVoice_Key_tbInvestigation_Question">
+          <End Role="tbInvestigation_Question" Type="dbHospitalRevisitModel.tbInvestigation_Question" Multiplicity="0..1" />
+          <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.tbVoice_Key" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbInvestigation_Question">
+              <PropertyRef Name="Investigation_Question_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Key">
+              <PropertyRef Name="Investigation_Question_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMessage_Sample_tbMessage_Sample">
+          <End Role="tbMessage_Sample" Type="dbHospitalRevisitModel.tbMessage_Sample" Multiplicity="1" />
+          <End Role="tbMessage_Sample1" Type="dbHospitalRevisitModel.tbMessage_Sample" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbMessage_Sample">
+              <PropertyRef Name="Message_Sample_ID" />
+            </Principal>
+            <Dependent Role="tbMessage_Sample1">
+              <PropertyRef Name="Message_Sample_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbMessage_Sample_tbMessage_Sample1">
+          <End Role="tbMessage_Sample" Type="dbHospitalRevisitModel.tbMessage_Sample" Multiplicity="1" />
+          <End Role="tbMessage_Sample1" Type="dbHospitalRevisitModel.tbMessage_Sample" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbMessage_Sample">
+              <PropertyRef Name="Message_Sample_ID" />
+            </Principal>
+            <Dependent Role="tbMessage_Sample1">
+              <PropertyRef Name="Message_Sample_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPhoneBook_tbPatient">
+          <End Role="tbPatient" Type="dbHospitalRevisitModel.tbPatient" Multiplicity="0..1" />
+          <End Role="tbPhoneBook" Type="dbHospitalRevisitModel.tbPhoneBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbPatient">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="tbPhoneBook">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPlan_Voice_Caller_tbPatient">
+          <End Role="tbPatient" Type="dbHospitalRevisitModel.tbPatient" Multiplicity="0..1" />
+          <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbPatient">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Plan">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPhoneBook_tbPhoneBook">
+          <End Role="tbPhoneBook" Type="dbHospitalRevisitModel.tbPhoneBook" Multiplicity="1" />
+          <End Role="tbPhoneBook1" Type="dbHospitalRevisitModel.tbPhoneBook" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbPhoneBook">
+              <PropertyRef Name="PhoneBook_ID" />
+            </Principal>
+            <Dependent Role="tbPhoneBook1">
+              <PropertyRef Name="PhoneBook_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbPoint_Out_tbStaff">
+          <End Role="tbStaff" Type="dbHospitalRevisitModel.tbStaff" Multiplicity="0..1" />
+          <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.tbPoint_Out" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbStaff">
+              <PropertyRef Name="Staff_ID" />
+            </Principal>
+            <Dependent Role="tbPoint_Out">
+              <PropertyRef Name="Response_Staff_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbReference_Information_tbReference_Information">
+          <End Role="tbReference_Information" Type="dbHospitalRevisitModel.tbReference_Information" Multiplicity="1" />
+          <End Role="tbReference_Information1" Type="dbHospitalRevisitModel.tbReference_Information" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbReference_Information">
+              <PropertyRef Name="Reference_Information_ID" />
+            </Principal>
+            <Dependent Role="tbReference_Information1">
+              <PropertyRef Name="Reference_Information_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbStaffInfo_tbStaffDuty">
+          <End Role="tbStaffDuty" Type="dbHospitalRevisitModel.tbStaffDuty" Multiplicity="0..1" />
+          <End Role="tbStaff" Type="dbHospitalRevisitModel.tbStaff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbStaffDuty">
+              <PropertyRef Name="StaffDuty_ID" />
+            </Principal>
+            <Dependent Role="tbStaff">
+              <PropertyRef Name="StaffDuty_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbVoice_Key_tbVoice_Key">
+          <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.tbVoice_Key" Multiplicity="1" />
+          <End Role="tbVoice_Key1" Type="dbHospitalRevisitModel.tbVoice_Key" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbVoice_Key">
+              <PropertyRef Name="Voice_Key_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Key1">
+              <PropertyRef Name="Voice_Key_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbVoice_Key_tbVoice_Plan">
+          <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="0..1" />
+          <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.tbVoice_Key" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbVoice_Plan">
+              <PropertyRef Name="Voice_Plan_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Key">
+              <PropertyRef Name="Voice_Plan_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbVoice_Plan_tbVoice_Plan">
+          <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="1" />
+          <End Role="tbVoice_Plan1" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tbVoice_Plan">
+              <PropertyRef Name="Voice_Plan_ID" />
+            </Principal>
+            <Dependent Role="tbVoice_Plan1">
+              <PropertyRef Name="Voice_Plan_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbHospitalRevisitModelStoreContainer" CdmEntityContainer="dbHospitalRevisitEntities">
+          <EntitySetMapping Name="tbCaller_Question">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbCaller_Question">
+              <MappingFragment StoreEntitySet="tbCaller_Question">
+                <ScalarProperty Name="Caller_Question_ID" ColumnName="Caller_Question_ID" />
+                <ScalarProperty Name="Caller_Title_ID" ColumnName="Caller_Title_ID" />
+                <ScalarProperty Name="Investigation_Question_ID" ColumnName="Investigation_Question_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCaller_Title">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbCaller_Title">
+              <MappingFragment StoreEntitySet="tbCaller_Title">
+                <ScalarProperty Name="Caller_Title_ID" ColumnName="Caller_Title_ID" />
+                <ScalarProperty Name="Caller_Title_Name" ColumnName="Caller_Title_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCirculation">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbCirculation">
+              <MappingFragment StoreEntitySet="tbCirculation">
+                <ScalarProperty Name="Circulation_ID" ColumnName="Circulation_ID" />
+                <ScalarProperty Name="Processor_Serial_Number" ColumnName="Processor_Serial_Number" />
+                <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbContent_Record">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbContent_Record">
+              <MappingFragment StoreEntitySet="tbContent_Record">
+                <ScalarProperty Name="Content_Record_ID" ColumnName="Content_Record_ID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Superior_No" ColumnName="Superior_No" />
+                <ScalarProperty Name="Sequence_Number" ColumnName="Sequence_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbDeal_Way">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbDeal_Way">
+              <MappingFragment StoreEntitySet="tbDeal_Way">
+                <ScalarProperty Name="Deal_Way_ID" ColumnName="Deal_Way_ID" />
+                <ScalarProperty Name="Processing_Method" ColumnName="Processing_Method" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbDepartment">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbDepartment">
+              <MappingFragment StoreEntitySet="tbDepartment">
+                <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+                <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbDiagnosis">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbDiagnosis">
+              <MappingFragment StoreEntitySet="tbDiagnosis">
+                <ScalarProperty Name="Diagnosis_ID" ColumnName="Diagnosis_ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="In_Hospital_NO" ColumnName="In_Hospital_NO" />
+                <ScalarProperty Name="Principal_Diagnosis" ColumnName="Principal_Diagnosis" />
+                <ScalarProperty Name="Out_Hospital_Advice" ColumnName="Out_Hospital_Advice" />
+                <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+                <ScalarProperty Name="In_Hospital_Date" ColumnName="In_Hospital_Date" />
+                <ScalarProperty Name="Out_Hospital_Date" ColumnName="Out_Hospital_Date" />
+                <ScalarProperty Name="Rediagnose_Date" ColumnName="Rediagnose_Date" />
+                <ScalarProperty Name="Rediagnose_Department_ID" ColumnName="Rediagnose_Department_ID" />
+                <ScalarProperty Name="Rediagnose_Doctor" ColumnName="Rediagnose_Doctor" />
+                <ScalarProperty Name="Is_Assign_Voice_Survey" ColumnName="Is_Assign_Voice_Survey" />
+                <ScalarProperty Name="Is_Assign_Manual_Survey" ColumnName="Is_Assign_Manual_Survey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbInformation_Register">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbInformation_Register">
+              <MappingFragment StoreEntitySet="tbInformation_Register">
+                <ScalarProperty Name="Information_Register_ID" ColumnName="Information_Register_ID" />
+                <ScalarProperty Name="Personnal_Caller_ID" ColumnName="Personnal_Caller_ID" />
+                <ScalarProperty Name="Consulting_Phone_Number" ColumnName="Consulting_Phone_Number" />
+                <ScalarProperty Name="Air_Time" ColumnName="Air_Time" />
+                <ScalarProperty Name="Involve_Content" ColumnName="Involve_Content" />
+                <ScalarProperty Name="Involve_Department_ID" ColumnName="Involve_Department_ID" />
+                <ScalarProperty Name="Involve_StaffInfo_ID" ColumnName="Involve_StaffInfo_ID" />
+                <ScalarProperty Name="Involve_Content_Qualitative" ColumnName="Involve_Content_Qualitative" />
+                <ScalarProperty Name="Is_Moving" ColumnName="Is_Moving" />
+                <ScalarProperty Name="SOSC_CSR_ID" ColumnName="SOSC_CSR_ID" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbInvestigation_Key">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbInvestigation_Key">
+              <MappingFragment StoreEntitySet="tbInvestigation_Key">
+                <ScalarProperty Name="Investigation_Key_ID" ColumnName="Investigation_Key_ID" />
+                <ScalarProperty Name="Iinvestigatio_Question_ID" ColumnName="Iinvestigatio_Question_ID" />
+                <ScalarProperty Name="Answer_Marked_No" ColumnName="Answer_Marked_No" />
+                <ScalarProperty Name="Answer_Content" ColumnName="Answer_Content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbInvestigation_Question">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbInvestigation_Question">
+              <MappingFragment StoreEntitySet="tbInvestigation_Question">
+                <ScalarProperty Name="Investigation_Question_ID" ColumnName="Investigation_Question_ID" />
+                <ScalarProperty Name="Review_Content" ColumnName="Review_Content" />
+                <ScalarProperty Name="File_Paths" ColumnName="File_Paths" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMessage_Sample">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbMessage_Sample">
+              <MappingFragment StoreEntitySet="tbMessage_Sample">
+                <ScalarProperty Name="Message_Sample_ID" ColumnName="Message_Sample_ID" />
+                <ScalarProperty Name="Message_Content" ColumnName="Message_Content" />
+                <ScalarProperty Name="MMS_Path" ColumnName="MMS_Path" />
+                <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbMessage_Send_Plan">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbMessage_Send_Plan">
+              <MappingFragment StoreEntitySet="tbMessage_Send_Plan">
+                <ScalarProperty Name="Message_Send_Plan_ID" ColumnName="Message_Send_Plan_ID" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+                <ScalarProperty Name="Plan_Send_Time" ColumnName="Plan_Send_Time" />
+                <ScalarProperty Name="Actual_Send_Time" ColumnName="Actual_Send_Time" />
+                <ScalarProperty Name="Message_Content" ColumnName="Message_Content" />
+                <ScalarProperty Name="MMS_Path" ColumnName="MMS_Path" />
+                <ScalarProperty Name="Is_Send" ColumnName="Is_Send" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbPatient">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbPatient">
+              <MappingFragment StoreEntitySet="tbPatient">
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Heath_Card" ColumnName="Heath_Card" />
+                <ScalarProperty Name="Document_No" ColumnName="Document_No" />
+                <ScalarProperty Name="Patient_Name" ColumnName="Patient_Name" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Is_Dead" ColumnName="Is_Dead" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbPersonnal_Caller">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbPersonnal_Caller">
+              <MappingFragment StoreEntitySet="tbPersonnal_Caller">
+                <ScalarProperty Name="Personnal_Caller_ID" ColumnName="Personnal_Caller_ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Vioce_Key_Account_ID" ColumnName="Vioce_Key_Account_ID" />
+                <ScalarProperty Name="Review_Project_Name_ID" ColumnName="Review_Project_Name_ID" />
+                <ScalarProperty Name="SOSC_CSR_ID" ColumnName="SOSC_CSR_ID" />
+                <ScalarProperty Name="Is_Return_Visit" ColumnName="Is_Return_Visit" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbPhoneBook">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbPhoneBook">
+              <MappingFragment StoreEntitySet="tbPhoneBook">
+                <ScalarProperty Name="PhoneBook_ID" ColumnName="PhoneBook_ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+                <ScalarProperty Name="Phone_Name" ColumnName="Phone_Name" />
+                <ScalarProperty Name="patient_relation" ColumnName="patient_relation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbPoint_Out">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbPoint_Out">
+              <MappingFragment StoreEntitySet="tbPoint_Out">
+                <ScalarProperty Name="Point_Out_ID" ColumnName="Point_Out_ID" />
+                <ScalarProperty Name="Information_Register_ID" ColumnName="Information_Register_ID" />
+                <ScalarProperty Name="Deal_Way_ID" ColumnName="Deal_Way_ID" />
+                <ScalarProperty Name="Response_Department_ID" ColumnName="Response_Department_ID" />
+                <ScalarProperty Name="Response_Staff_ID" ColumnName="Response_Staff_ID" />
+                <ScalarProperty Name="Department_Response_Time" ColumnName="Department_Response_Time" />
+                <ScalarProperty Name="Department_Response_Content" ColumnName="Department_Response_Content" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbReference_Information">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbReference_Information">
+              <MappingFragment StoreEntitySet="tbReference_Information">
+                <ScalarProperty Name="Reference_Information_ID" ColumnName="Reference_Information_ID" />
+                <ScalarProperty Name="Information_Content" ColumnName="Information_Content" />
+                <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+                <ScalarProperty Name="Sequence_Number" ColumnName="Sequence_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbReview_Project_Name">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbReview_Project_Name">
+              <MappingFragment StoreEntitySet="tbReview_Project_Name">
+                <ScalarProperty Name="Review_Project_Name_ID" ColumnName="Review_Project_Name_ID" />
+                <ScalarProperty Name="Review_Name" ColumnName="Review_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbRole">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbRole">
+              <MappingFragment StoreEntitySet="tbRole">
+                <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+                <ScalarProperty Name="Role_Menus" ColumnName="Role_Menus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbStaff">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbStaff">
+              <MappingFragment StoreEntitySet="tbStaff">
+                <ScalarProperty Name="Staff_ID" ColumnName="Staff_ID" />
+                <ScalarProperty Name="Staff_Name" ColumnName="Staff_Name" />
+                <ScalarProperty Name="Staff_No" ColumnName="Staff_No" />
+                <ScalarProperty Name="StaffDuty_ID" ColumnName="StaffDuty_ID" />
+                <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbStaffDuty">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbStaffDuty">
+              <MappingFragment StoreEntitySet="tbStaffDuty">
+                <ScalarProperty Name="StaffDuty_ID" ColumnName="StaffDuty_ID" />
+                <ScalarProperty Name="StaffDuty_Name" ColumnName="StaffDuty_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbVisits_Information">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbVisits_Information">
+              <MappingFragment StoreEntitySet="tbVisits_Information">
+                <ScalarProperty Name="Visits_Information_ID" ColumnName="Visits_Information_ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Submit_Date" ColumnName="Submit_Date" />
+                <ScalarProperty Name="The_Reservation_Department" ColumnName="The_Reservation_Department" />
+                <ScalarProperty Name="ZocDoc" ColumnName="ZocDoc" />
+                <ScalarProperty Name="Records_Generated_Date" ColumnName="Records_Generated_Date" />
+                <ScalarProperty Name="Is_Exercise" ColumnName="Is_Exercise" />
+                <ScalarProperty Name="Exercise_Staff_No" ColumnName="Exercise_Staff_No" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbVoice_Key">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbVoice_Key">
+              <MappingFragment StoreEntitySet="tbVoice_Key">
+                <ScalarProperty Name="Voice_Key_ID" ColumnName="Voice_Key_ID" />
+                <ScalarProperty Name="Voice_Plan_ID" ColumnName="Voice_Plan_ID" />
+                <ScalarProperty Name="Caller_Title_ID" ColumnName="Caller_Title_ID" />
+                <ScalarProperty Name="Investigation_Question_ID" ColumnName="Investigation_Question_ID" />
+                <ScalarProperty Name="Answer_Marked_No" ColumnName="Answer_Marked_No" />
+                <ScalarProperty Name="Record_Generate_Time" ColumnName="Record_Generate_Time" />
+                <ScalarProperty Name="Is_Manual_Revisit" ColumnName="Is_Manual_Revisit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbVoice_Plan">
+            <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbVoice_Plan">
+              <MappingFragment StoreEntitySet="tbVoice_Plan">
+                <ScalarProperty Name="Voice_Plan_ID" ColumnName="Voice_Plan_ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Diagnosis_ID" ColumnName="Diagnosis_ID" />
+                <ScalarProperty Name="Caller_Title_ID" ColumnName="Caller_Title_ID" />
+                <ScalarProperty Name="Planning_Time" ColumnName="Planning_Time" />
+                <ScalarProperty Name="Revisit_Days" ColumnName="Revisit_Days" />
+                <ScalarProperty Name="Is_Revisit" ColumnName="Is_Revisit" />
+                <ScalarProperty Name="File_Paths" ColumnName="File_Paths" />
+                <ScalarProperty Name="Is_Answer" ColumnName="Is_Answer" />
+                <ScalarProperty Name="Is_Manual_Revisit" ColumnName="Is_Manual_Revisit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,43 @@
+﻿@model HospitalRevisitSystem.tbMessage_Sample
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbMessage_Sample</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message_Sample_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message_Sample_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message_Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message_Content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MMS_Path)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MMS_Path)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Parent_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Parent_ID)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

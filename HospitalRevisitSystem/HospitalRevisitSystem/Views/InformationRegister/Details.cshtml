@@ -1,0 +1,92 @@
+﻿@model HospitalRevisitSystem.tbInformation_Register
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbInformation_Register</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Information_Register_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Information_Register_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Personnal_Caller_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Personnal_Caller_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Consulting_Phone_Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Consulting_Phone_Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Air_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Air_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Involve_Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Involve_Content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Involve_Department_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Involve_Department_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Involve_StaffInfo_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Involve_StaffInfo_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Involve_Content_Qualitative)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Involve_Content_Qualitative)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Moving)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Moving)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SOSC_CSR_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SOSC_CSR_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Remarks)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Remarks)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

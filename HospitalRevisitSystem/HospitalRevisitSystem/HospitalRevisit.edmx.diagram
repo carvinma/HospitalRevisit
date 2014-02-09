@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9841160669e345668945f86a0e78e193" Name="关系图1">
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbCaller_Question" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbCaller_Title" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbCirculation" Width="1.5" PointX="8" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbContent_Record" Width="1.5" PointX="10.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbDeal_Way" Width="1.5" PointX="8.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbDepartment" Width="1.5" PointX="5.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbDiagnosis" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbInformation_Register" Width="1.5" PointX="8.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbInvestigation_Key" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbInvestigation_Question" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbMessage_Sample" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbMessage_Send_Plan" Width="1.5" PointX="10.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbPatient" Width="1.5" PointX="3.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbPersonnal_Caller" Width="1.5" PointX="12.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbPhoneBook" Width="1.5" PointX="6" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbPoint_Out" Width="1.5" PointX="11" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbReference_Information" Width="1.5" PointX="10.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbReview_Project_Name" Width="1.5" PointX="12.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbRole" Width="1.5" PointX="12.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbStaff" Width="1.5" PointX="8" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbStaffDuty" Width="1.5" PointX="5.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbVisits_Information" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbVoice_Key" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbHospitalRevisitModel.tbVoice_Plan" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbCaller_Question_tbCaller_Title" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbCaller_Question_tbInvestigation_Question" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbCaller_Title" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbVoice_Key_tbCaller_Title" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbCirculation_tbCirculation" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbCirculation_tbDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbPoint_Out_tbDeal_Way" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbPoint_Out_tbDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbStaff_tbDepartment" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbDiagnosis" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbPoint_Out_tbInformation_Register" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbInvestigation_Key_tbInvestigation_Question" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbVoice_Key_tbInvestigation_Question" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample1" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbPhoneBook_tbPatient" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbPatient" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbPhoneBook_tbPhoneBook" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbPoint_Out_tbStaff" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbReference_Information_tbReference_Information" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbStaffInfo_tbStaffDuty" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbVoice_Key_tbVoice_Key" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbVoice_Key_tbVoice_Plan" ManuallyRouted="false" />
+        <AssociationConnector Association="dbHospitalRevisitModel.FK_tbVoice_Plan_tbVoice_Plan" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

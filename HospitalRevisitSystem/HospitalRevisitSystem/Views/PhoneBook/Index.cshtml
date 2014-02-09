@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbPhoneBook>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>电话号码簿</h2>
+@using (Html.BeginForm("Index", "PhoneBook", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","PhoneBook", new {  id=ViewBag.CurrentPatientID},new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+         <th>
+            机主姓名
+        </th>
+        <th>
+            电话号码
+        </th>
+       
+        <th>
+            患者编号
+        </th>
+        <th>
+            与患者关系
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+         <td>
+            @Html.DisplayFor(modelItem => item.Phone_Name)
+        </td> 
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient_ID)
+        </td>      
+        <td>
+            @Html.DisplayFor(modelItem => item.patient_relation)
+        </td>
+        
+        <td>
+            @Html.ActionLink("编辑", "Edit", new {  id=item.PhoneBook_ID},new {@class= "btn btn-success"})     
+            @Html.ActionLink("删除", "Delete",  new {  id=item.PhoneBook_ID},new {@class= "btn"})     
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new {id=ViewBag.CurrentPatientID, page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )   

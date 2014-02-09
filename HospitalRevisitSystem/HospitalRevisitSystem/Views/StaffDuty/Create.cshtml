@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbStaffDuty
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>新增员工职务</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbStaffDuty</legend>
+
+        
+
+        <div class="editor-label">
+           职务名称
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StaffDuty_Name)
+            @Html.ValidationMessageFor(model => model.StaffDuty_Name)
+        </div>
+
+        <p>
+            @Html.ActionLink("取消", "Index", "StaffDuty", null, new { @class = "btn" })
+            <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+
+

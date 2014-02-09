@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbVoice_Key
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbVoice_Key</legend>
+
+    
+
+    <div class="display-label">
+         语音调查计划表结构
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Voice_Plan_ID)
+    </div>
+
+    <div class="display-label">
+        调查问卷表编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Caller_Title_ID)
+    </div>
+
+    <div class="display-label">
+         调查题目表编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Investigation_Question_ID)
+    </div>
+
+    <div class="display-label">
+         答案标识码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Answer_Marked_No)
+    </div>
+
+    <div class="display-label">
+        记录生成时间
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Record_Generate_Time)
+    </div>
+
+    <div class="display-label">
+      是否分配人工再调查
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Manual_Revisit)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Voice_Key_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","VoiceKey",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

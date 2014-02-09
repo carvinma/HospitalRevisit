@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbMessage_Sample
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbMessage_Sample</legend>
+
+        
+
+        <div class="editor-label">
+            短信内容
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Message_Content)
+            @Html.ValidationMessageFor(model => model.Message_Content)
+        </div>
+
+        <div class="editor-label">
+            彩信文件路径 
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MMS_Path)
+            @Html.ValidationMessageFor(model => model.MMS_Path)
+        </div>
+
+        <div class="editor-label">
+            上级编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Parent_ID)
+            @Html.ValidationMessageFor(model => model.Parent_ID)
+        </div>
+         @Html.HiddenFor(model => model.Message_Sample_ID)
+        <p>
+            @Html.ActionLink("取消", "Index","MessageSample",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+
+

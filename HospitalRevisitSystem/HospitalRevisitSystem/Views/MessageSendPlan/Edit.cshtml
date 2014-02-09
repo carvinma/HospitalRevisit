@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbMessage_Send_Plan
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbMessage_Send_Plan</legend>
+
+        
+
+        <div class="editor-label">
+          电话号码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone_Number)
+            @Html.ValidationMessageFor(model => model.Phone_Number)
+        </div>
+
+        <div class="editor-label">
+           计划发送时间
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Plan_Send_Time)
+            @Html.ValidationMessageFor(model => model.Plan_Send_Time)
+        </div>
+
+        <div class="editor-label">
+           实际发送时间
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Actual_Send_Time)
+            @Html.ValidationMessageFor(model => model.Actual_Send_Time)
+        </div>
+
+        <div class="editor-label">
+            待发短信内容
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Message_Content)
+            @Html.ValidationMessageFor(model => model.Message_Content)
+        </div>
+
+        <div class="editor-label">
+            待发彩信文件路径
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MMS_Path)
+            @Html.ValidationMessageFor(model => model.MMS_Path)
+        </div>
+
+        <div class="editor-label">
+             是否发送
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Send)
+            @Html.ValidationMessageFor(model => model.Is_Send)
+        </div>
+        @Html.HiddenFor(model => model.Message_Send_Plan_ID)
+      <p>
+            @Html.ActionLink("取消", "Index","MessageSendPlan",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+
+

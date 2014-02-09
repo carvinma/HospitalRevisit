@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbReference_Information
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbReference_Information</legend>
+
+  
+
+    <div class="display-label">
+        内容
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Information_Content)
+    </div>
+
+    <div class="display-label">
+        上级编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Parent_ID)
+    </div>
+
+    <div class="display-label">
+         顺序号
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sequence_Number)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Reference_Information_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","ReferenceInformation",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

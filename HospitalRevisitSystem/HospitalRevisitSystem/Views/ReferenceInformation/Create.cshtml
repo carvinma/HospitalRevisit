@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbReference_Information
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbReference_Information</legend>
+
+        
+
+        <div class="editor-label">
+            内容
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Information_Content)
+            @Html.ValidationMessageFor(model => model.Information_Content)
+        </div>
+
+        <div class="editor-label">
+           上级编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Parent_ID)
+            @Html.ValidationMessageFor(model => model.Parent_ID)
+        </div>
+
+        <div class="editor-label">
+            顺序号
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sequence_Number)
+            @Html.ValidationMessageFor(model => model.Sequence_Number)
+        </div>
+
+       
+        <p>
+            @Html.ActionLink("取消", "Index","ReferenceInformation",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+

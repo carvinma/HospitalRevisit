@@ -1,0 +1,64 @@
+﻿@model HospitalRevisitSystem.tbPersonnal_Caller
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbPersonnal_Caller</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Personnal_Caller_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Personnal_Caller_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Patient_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Patient_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Vioce_Key_Account_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Vioce_Key_Account_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Review_Project_Name_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Review_Project_Name_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SOSC_CSR_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SOSC_CSR_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Return_Visit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Return_Visit)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Remarks)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Remarks)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

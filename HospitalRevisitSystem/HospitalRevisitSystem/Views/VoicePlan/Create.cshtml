@@ -1,0 +1,101 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbVoice_Plan
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbVoice_Plan</legend>
+
+        
+
+        <div class="editor-label">
+          患者基本信息结构编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Patient_ID)
+            @Html.ValidationMessageFor(model => model.Patient_ID)
+        </div>
+
+        <div class="editor-label">
+             已就诊信息结构编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Diagnosis_ID)
+            @Html.ValidationMessageFor(model => model.Diagnosis_ID)
+        </div>
+
+        <div class="editor-label">
+          调查问卷编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Caller_Title_ID)
+            @Html.ValidationMessageFor(model => model.Caller_Title_ID)
+        </div>
+
+        <div class="editor-label">
+        计划时间
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Planning_Time)
+            @Html.ValidationMessageFor(model => model.Planning_Time)
+        </div>
+
+        <div class="editor-label">
+          回访时间
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Revisit_Days)
+            @Html.ValidationMessageFor(model => model.Revisit_Days)
+        </div>
+
+        <div class="editor-label">
+        是否回访
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Revisit)
+            @Html.ValidationMessageFor(model => model.Is_Revisit)
+        </div>
+
+        <div class="editor-label">
+          录音文件路径
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.File_Paths)
+            @Html.ValidationMessageFor(model => model.File_Paths)
+        </div>
+
+        <div class="editor-label">
+       是否答题
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Answer)
+            @Html.ValidationMessageFor(model => model.Is_Answer)
+        </div>
+
+        <div class="editor-label">
+          是否分配人工再回访
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Manual_Revisit)
+            @Html.ValidationMessageFor(model => model.Is_Manual_Revisit)
+        </div>
+
+       
+        <p>
+            @Html.ActionLink("取消", "Index", "VoicePlan", null, new { @class = "btn" })
+            <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+

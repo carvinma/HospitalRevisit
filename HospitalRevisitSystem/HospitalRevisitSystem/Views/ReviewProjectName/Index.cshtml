@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbReview_Project_Name>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>回访任务名称列表</h2>
+@using (Html.BeginForm("Index", "ReviewProjectName", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","ReviewProjectName",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+       
+        <th>
+            名称
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Review_Name)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new {  id=item.Review_Project_Name_ID },new {@class= "btn btn-success"}) 
+           
+            @Html.ActionLink("删除", "Delete", new {  id=item.Review_Project_Name_ID },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )   

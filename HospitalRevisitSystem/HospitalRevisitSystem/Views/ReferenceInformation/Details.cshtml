@@ -1,0 +1,43 @@
+﻿@model HospitalRevisitSystem.tbReference_Information
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbReference_Information</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Reference_Information_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Reference_Information_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Information_Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Information_Content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Parent_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Parent_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sequence_Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sequence_Number)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbPatient
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>删除患者基本信息</h2>
+
+<h3>确定删除该患者基本信息?</h3>
+<fieldset>
+    <legend>患者基本信息</legend>
+
+    <div class="display-label">
+        患者姓名
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Patient_Name)
+    </div>
+
+    <div class="display-label">
+         医保卡号码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Heath_Card)
+    </div>
+
+    <div class="display-label">
+         病历号码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Document_No)
+    </div>
+
+    
+
+    <div class="display-label">
+        性别
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sex)
+    </div>
+
+    <div class="display-label">
+         生日
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Birthday)
+    </div>
+
+    <div class="display-label">
+       联系地址
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">
+        是否死亡
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Dead)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Patient_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","Patient",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

@@ -1,0 +1,81 @@
+﻿@model IEnumerable<HospitalRevisitSystem.tbVisits_Information>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>预约就诊信息列表</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Visits_Information_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Patient_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Submit_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.The_Reservation_Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZocDoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Records_Generated_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Is_Exercise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Exercise_Staff_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visits_Information_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Submit_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.The_Reservation_Department)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZocDoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Records_Generated_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Exercise)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Exercise_Staff_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

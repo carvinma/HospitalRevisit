@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbPatient
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>编辑患者信息</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbPatient</legend>
+
+        
+
+        <div class="editor-label">
+           医保卡号码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Heath_Card)
+            @Html.ValidationMessageFor(model => model.Heath_Card)
+        </div>
+
+        <div class="editor-label">
+            病历号码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Document_No)
+            @Html.ValidationMessageFor(model => model.Document_No)
+        </div>
+
+        <div class="editor-label">
+           患者姓名
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Patient_Name)
+            @Html.ValidationMessageFor(model => model.Patient_Name)
+        </div>
+
+        <div class="editor-label">
+          性别
+        </div>
+        <div class="editor-field">
+            @Html.RadioButtonFor(model => model.Sex, "false", new { Checked = "checked" }) 男
+            @Html.RadioButtonFor(model => model.Sex, "true") 女
+        </div>
+
+        <div class="editor-label">
+            生日
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Birthday)
+            @Html.ValidationMessageFor(model => model.Birthday)
+        </div>
+
+        <div class="editor-label">
+             联系地址
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+         是否死亡
+        </div>
+        <div class="editor-field">
+            @Html.RadioButtonFor(model => model.Is_Dead, "false", new { Checked = "checked" }) 否
+            @Html.RadioButtonFor(model => model.Is_Dead, "true") 是
+        </div>
+        @Html.HiddenFor(model => model.Patient_ID)
+         <p>
+            @Html.ActionLink("取消", "Index","Patient",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+

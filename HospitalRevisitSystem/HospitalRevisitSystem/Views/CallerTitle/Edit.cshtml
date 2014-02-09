@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbCaller_Title
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbCaller_Title</legend>
+
+
+        <div class="editor-label">
+           调查问卷表名称
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Caller_Title_Name)
+            @Html.ValidationMessageFor(model => model.Caller_Title_Name)
+        </div>
+        @Html.HiddenFor(model => model.Caller_Title_ID)
+        <p>
+            @Html.ActionLink("取消", "Index","CallerTitle",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+

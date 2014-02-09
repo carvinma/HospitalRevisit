@@ -1,0 +1,64 @@
+﻿@model HospitalRevisitSystem.tbVoice_Key
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbVoice_Key</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Voice_Key_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Voice_Key_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Voice_Plan_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Voice_Plan_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Caller_Title_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Caller_Title_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Investigation_Question_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Investigation_Question_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Answer_Marked_No)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Answer_Marked_No)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Record_Generate_Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Record_Generate_Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Manual_Revisit)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Manual_Revisit)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

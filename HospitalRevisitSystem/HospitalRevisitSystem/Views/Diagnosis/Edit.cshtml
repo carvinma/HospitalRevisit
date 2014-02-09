@@ -1,0 +1,122 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbDiagnosis
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbDiagnosis</legend>
+
+        
+
+        <div class="editor-label">
+           患者基本信息编码
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Patient_ID)
+            @Html.ValidationMessageFor(model => model.Patient_ID)
+        </div>
+
+        <div class="editor-label">
+            住院号
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.In_Hospital_NO)
+            @Html.ValidationMessageFor(model => model.In_Hospital_NO)
+        </div>
+
+        <div class="editor-label">
+             主要诊断
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Principal_Diagnosis)
+            @Html.ValidationMessageFor(model => model.Principal_Diagnosis)
+        </div>
+
+        <div class="editor-label">
+              出院医嘱
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Out_Hospital_Advice)
+            @Html.ValidationMessageFor(model => model.Out_Hospital_Advice)
+        </div>
+
+        <div class="editor-label">
+            所属科室
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Department_ID)
+            @Html.ValidationMessageFor(model => model.Department_ID)
+        </div>
+
+        <div class="editor-label">
+            入院日期
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.In_Hospital_Date)
+            @Html.ValidationMessageFor(model => model.In_Hospital_Date)
+        </div>
+
+        <div class="editor-label">
+            出院日期
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Out_Hospital_Date)
+            @Html.ValidationMessageFor(model => model.Out_Hospital_Date)
+        </div>
+
+        <div class="editor-label">
+            复诊日期
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Rediagnose_Date)
+            @Html.ValidationMessageFor(model => model.Rediagnose_Date)
+        </div>
+
+        <div class="editor-label">
+            复诊科室
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Rediagnose_Department_ID)
+            @Html.ValidationMessageFor(model => model.Rediagnose_Department_ID)
+        </div>
+
+        <div class="editor-label">
+             复诊医生
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Rediagnose_Doctor)
+            @Html.ValidationMessageFor(model => model.Rediagnose_Doctor)
+        </div>
+
+        <div class="editor-label">
+            是否分配语音调查
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Assign_Voice_Survey)
+            @Html.ValidationMessageFor(model => model.Is_Assign_Voice_Survey)
+        </div>
+
+        <div class="editor-label">
+            是否分配人工调查
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Is_Assign_Manual_Survey)
+            @Html.ValidationMessageFor(model => model.Is_Assign_Manual_Survey)
+        </div>
+            @Html.HiddenFor(model => model.Diagnosis_ID)
+       <p>
+            @Html.ActionLink("取消", "Index","Diagnosis",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+

@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbInvestigation_Question
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>编辑调查题目</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbInvestigation_Question</legend>
+
+
+        <div class="editor-label">
+           回访内容
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Review_Content)
+            @Html.ValidationMessageFor(model => model.Review_Content)
+        </div>
+
+        <div class="editor-label">
+            TTs合成语音文件路径
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.File_Paths)
+            @Html.ValidationMessageFor(model => model.File_Paths)
+        </div>
+         @Html.HiddenFor(model => model.Investigation_Question_ID)
+        <p>
+            @Html.ActionLink("取消", "Index","InvestigationQuestion",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+

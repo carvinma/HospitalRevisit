@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbMessage_Send_Plan
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbMessage_Send_Plan</legend>
+
+    
+
+    <div class="display-label">
+          电话号码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone_Number)
+    </div>
+
+    <div class="display-label">
+        计划发送时间
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Plan_Send_Time)
+    </div>
+
+    <div class="display-label">
+         实际发送时间
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Actual_Send_Time)
+    </div>
+
+    <div class="display-label">
+          待发短信内容
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message_Content)
+    </div>
+
+    <div class="display-label">
+         待发彩信文件路径
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MMS_Path)
+    </div>
+
+    <div class="display-label">
+         是否发送
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Send)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Message_Send_Plan_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","MessageSendPlan",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

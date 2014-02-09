@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbCaller_Question
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbCaller_Question</legend>
+
+       
+
+        <div class="editor-label">
+            调查问卷表编号
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Caller_Title_ID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Caller_Title_ID)
+        </div>
+
+        <div class="editor-label">
+           调查题目表编号
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Investigation_Question_ID)
+            @Html.ValidationMessageFor(model => model.Investigation_Question_ID)
+        </div>
+
+        
+        <p>
+            @Html.ActionLink("取消", "Index","CallerQuestion",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+

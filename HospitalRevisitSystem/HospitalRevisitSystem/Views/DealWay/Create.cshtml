@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbDeal_Way
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>新增登记处理方法</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbDeal_Way</legend>
+
+
+        <div class="editor-label">
+            处理方法
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Processing_Method)
+            @Html.ValidationMessageFor(model => model.Processing_Method)
+        </div>
+
+       
+        <p>
+            @Html.ActionLink("取消", "Index","DealWay",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+

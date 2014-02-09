@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbInformation_Register
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbInformation_Register</legend>
+
+    
+
+    <div class="display-label">
+         人工回访计划表编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Personnal_Caller_ID)
+    </div>
+
+    <div class="display-label">
+       咨询电话号码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Consulting_Phone_Number)
+    </div>
+
+    <div class="display-label">
+          通话时间
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Air_Time)
+    </div>
+
+    <div class="display-label">
+    涉及内容
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Involve_Content)
+    </div>
+
+    <div class="display-label">
+         涉及科室编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Involve_Department_ID)
+    </div>
+
+    <div class="display-label">
+         涉及员工编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Involve_StaffInfo_ID)
+    </div>
+
+    <div class="display-label">
+        涉及内容定性
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Involve_Content_Qualitative)
+    </div>
+
+    <div class="display-label">
+         流转状态
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Moving)
+    </div>
+
+    <div class="display-label">
+           回访员编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SOSC_CSR_ID)
+    </div>
+
+    <div class="display-label">
+         备注
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Remarks)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Information_Register_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","InformationRegister",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

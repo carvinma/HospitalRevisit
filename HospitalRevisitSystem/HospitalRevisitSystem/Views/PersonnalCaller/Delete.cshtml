@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbPersonnal_Caller
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbPersonnal_Caller</legend>
+
+
+
+    <div class="display-label">
+         患者基本信息结构编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Patient_ID)
+    </div>
+
+    <div class="display-label">
+     语音调查答案流水编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Vioce_Key_Account_ID)
+    </div>
+
+    <div class="display-label">
+        回访计划任务名称表编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Review_Project_Name_ID)
+    </div>
+
+    <div class="display-label">
+         回访员编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SOSC_CSR_ID)
+    </div>
+
+    <div class="display-label">
+         是否回访
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Return_Visit)
+    </div>
+
+    <div class="display-label">
+       备注
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Remarks)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Personnal_Caller_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","PersonnalCaller",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

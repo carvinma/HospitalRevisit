@@ -1,0 +1,92 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbVoice_Plan>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "VoicePlan", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","VoicePlan",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+           患者基本信息结构编码
+        </th>
+        <th>
+            已就诊信息结构编码
+        </th>
+        <th>
+          调查问卷编码
+        </th>
+        <th>
+           计划时间
+        </th>
+        <th>
+           回访时间
+        </th>
+        <th>
+          是否回访
+        </th>
+        <th>
+           录音文件路径
+        </th>
+        <th>
+           是否答题
+        </th>
+        <th>
+          是否分配人工再回访
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Voice_Plan_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Patient_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diagnosis_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Caller_Title_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Planning_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Revisit_Days)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Revisit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.File_Paths)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Answer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Manual_Revisit)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new {  id=item.Voice_Plan_ID  },new {@class= "btn btn-success"}) 
+            @Html.ActionLink("删除", "Delete", new {  id=item.Voice_Plan_ID  },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) )  

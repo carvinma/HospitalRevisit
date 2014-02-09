@@ -1,0 +1,43 @@
+﻿@model HospitalRevisitSystem.tbInvestigation_Key
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbInvestigation_Key</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Investigation_Key_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Investigation_Key_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbInvestigation_Question.Review_Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbInvestigation_Question.Review_Content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Answer_Marked_No)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Answer_Marked_No)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Answer_Content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Answer_Content)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

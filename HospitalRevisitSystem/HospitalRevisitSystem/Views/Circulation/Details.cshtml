@@ -1,0 +1,36 @@
+﻿@model HospitalRevisitSystem.tbCirculation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbCirculation</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Circulation_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Circulation_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Processor_Serial_Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Processor_Serial_Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Department_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department_ID)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

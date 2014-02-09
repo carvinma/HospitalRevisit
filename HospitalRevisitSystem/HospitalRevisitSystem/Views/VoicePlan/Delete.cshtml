@@ -1,0 +1,86 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbVoice_Plan
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbVoice_Plan</legend>
+
+    
+
+    <div class="display-label">
+         患者基本信息结构编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Patient_ID)
+    </div>
+
+    <div class="display-label">
+     已就诊信息结构编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Diagnosis_ID)
+    </div>
+
+    <div class="display-label">
+        调查问卷编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Caller_Title_ID)
+    </div>
+
+    <div class="display-label">
+   计划时间
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Planning_Time)
+    </div>
+
+    <div class="display-label">
+         回访时间
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Revisit_Days)
+    </div>
+
+    <div class="display-label">
+          是否回访
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Revisit)
+    </div>
+
+    <div class="display-label">
+      录音文件路径
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.File_Paths)
+    </div>
+
+    <div class="display-label">
+       是否答题
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Answer)
+    </div>
+
+    <div class="display-label">
+     是否分配人工再回访
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Manual_Revisit)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Voice_Plan_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","VoicePlan",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}

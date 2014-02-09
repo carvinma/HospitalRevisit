@@ -1,0 +1,106 @@
+﻿@model HospitalRevisitSystem.tbDiagnosis
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbDiagnosis</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Diagnosis_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Diagnosis_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Patient_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Patient_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.In_Hospital_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.In_Hospital_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Principal_Diagnosis)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Principal_Diagnosis)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Out_Hospital_Advice)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Out_Hospital_Advice)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Department_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.In_Hospital_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.In_Hospital_Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Out_Hospital_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Out_Hospital_Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rediagnose_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rediagnose_Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rediagnose_Department_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rediagnose_Department_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rediagnose_Doctor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rediagnose_Doctor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Assign_Voice_Survey)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Assign_Voice_Survey)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Is_Assign_Manual_Survey)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Is_Assign_Manual_Survey)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

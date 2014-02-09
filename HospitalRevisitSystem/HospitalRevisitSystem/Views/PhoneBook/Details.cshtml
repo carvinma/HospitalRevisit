@@ -1,0 +1,50 @@
+﻿@model HospitalRevisitSystem.tbPhoneBook
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>tbPhoneBook</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PhoneBook_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PhoneBook_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.tbPatient.Heath_Card)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbPatient.Heath_Card)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phone_Number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone_Number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phone_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.patient_relation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.patient_relation)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

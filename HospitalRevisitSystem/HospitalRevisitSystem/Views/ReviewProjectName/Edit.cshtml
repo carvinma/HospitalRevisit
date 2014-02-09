@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbReview_Project_Name
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>编辑回访任务名称</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbReview_Project_Name</legend>
+
+        
+
+        <div class="editor-label">
+           名称
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Review_Name)
+            @Html.ValidationMessageFor(model => model.Review_Name)
+        </div>
+         @Html.HiddenFor(model => model.Review_Project_Name_ID)
+        <p>
+            @Html.ActionLink("取消", "Index","ReviewProjectName",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+    </fieldset>
+}
+
+
+

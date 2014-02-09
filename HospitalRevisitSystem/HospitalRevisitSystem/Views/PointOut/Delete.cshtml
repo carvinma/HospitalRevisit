@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model HospitalRevisitSystem.tbPoint_Out
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tbPoint_Out</legend>
+
+    
+
+    <div class="display-label">
+        人工登记信息编码
+        </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbInformation_Register.Consulting_Phone_Number)
+    </div>
+
+    <div class="display-label">
+        登记信息处理方法编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbDeal_Way.Processing_Method)
+    </div>
+
+    <div class="display-label">
+          回应科室编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbDepartment.Department_Name)
+    </div>
+
+    <div class="display-label">
+         回应科室员工编码
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.tbStaff.Staff_Name)
+    </div>
+
+    <div class="display-label">
+        科室回应时间
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department_Response_Time)
+    </div>
+
+    <div class="display-label">
+        科室回应内容
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department_Response_Content)
+    </div>
+
+    <div class="display-label">
+        备注
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Remarks)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.HiddenFor(model => model.Point_Out_ID)
+    <p>
+            @Html.ActionLink("取消", "Index","PointOut",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
+        </p>
+}
+}

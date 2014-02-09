@@ -1,0 +1,99 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model PagedList.IPagedList<HospitalRevisitSystem.tbInformation_Register>
+@using PagedList.Mvc; 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "InformationRegister", FormMethod.Get))
+{
+    <p>
+        名称: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)  
+        <input type="submit" value="查询" class="btn btn-primary" />@Html.ActionLink("新增", "Create","InformationRegister",null,new {@class= "btn"})
+    </p>
+}
+<table class="table table-bordered">
+    <tr>
+        
+        <th>
+           人工回访计划表编码
+        </th>
+        <th>
+            咨询电话号码
+        </th>
+        <th>
+           通话时间
+        </th>
+        <th>
+           涉及内容
+        </th>
+        <th>
+           涉及科室编码
+        </th>
+        <th>
+           涉及员工编码
+        </th>
+        <th>
+            涉及内容定性
+        </th>
+        <th>
+           流转状态
+        </th>
+        <th>
+          回访员编码
+        </th>
+        <th>
+          备注
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Information_Register_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Personnal_Caller_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Consulting_Phone_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Air_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Involve_Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Involve_Department_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Involve_StaffInfo_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Involve_Content_Qualitative)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Is_Moving)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOSC_CSR_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.ActionLink("编辑", "Edit", new {id=item.Information_Register_ID },new {@class= "btn btn-success"}) |
+          
+            @Html.ActionLink("删除", "Delete", new { id=item.Information_Register_ID },new {@class= "btn"})
+        </td>
+    </tr>
+}
+
+</table>
+@Html.PagedListPager( Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter=ViewBag.CurrentFilter }) ) 
