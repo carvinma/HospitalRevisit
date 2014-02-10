@@ -38,7 +38,7 @@ namespace HospitalRevisitSystem.Controllers
             {
                 query = query.Where(s => s.Rediagnose_Doctor.ToLower().Contains(searchString.ToLower()) == true);
             }
-            query = query.OrderBy(s => s.Diagnosis_ID);
+            query = query.OrderByDescending(s => s.Diagnosis_ID);
             int pageSize = 10;
             int pageNumber = (page ?? 1);
             return View(query.ToPagedList(pageNumber, pageSize));
