@@ -7,7 +7,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>新增短(彩)信发送计划</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -61,8 +61,8 @@
            是否发送
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Is_Send)
-            @Html.ValidationMessageFor(model => model.Is_Send)
+            @Html.RadioButtonFor(model => model.Is_Send, "false", new { Checked = "checked" }) 否
+            @Html.RadioButtonFor(model => model.Is_Send, "true") 是
         </div>
 
        
