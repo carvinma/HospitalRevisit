@@ -6,17 +6,42 @@
 @{
     ViewBag.Title = "Create";
 }
+<link href="@Url.Content("~/Content/jquery/jquery.treeview.css")" rel="stylesheet" type="text/css" /> 
+ <script src="@Url.Content("~/Content/jquery/jquery.treeview.js")" type="text/javascript"></script>
 
 <h2>新增调查问卷表</h2>
+<script>
+    jQuery().ready(function ($) {
+        $("#btnSelect").click(function () {
+            $('#myModal').modal('show');            
+        });
+
+           
+
+        $("#tree").treeview({
+            collapsed: true,
+            animated: "medium",
+            control: "#sidetreecontrol",
+            persist: "location"
+        });
+
+        $("#tree2").treeview({
+            collapsed: true,
+            animated: "medium",
+            control: "#sidetreecontrol",
+            persist: "location"
+        });
+
+
+        
+    });
+</script>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>tbCaller_Question</legend>
-
-       
-
         <div class="editor-label">
             调查问卷表编号
         </div>
@@ -26,10 +51,10 @@
         </div>
 
         <div class="editor-label">
-           调查题目表编号
+           选择调查题目表
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Investigation_Question_ID)
+            @Html.EditorFor(model => model.Investigation_Question_ID)<input type="button" name="btnSelect" class="btn" id="btnSelect" value="...">
             @Html.ValidationMessageFor(model => model.Investigation_Question_ID)
         </div>
 
@@ -38,7 +63,35 @@
             @Html.ActionLink("取消", "Index","CallerQuestion",null,new {@class= "btn"}) <input type="submit" value="提交" class="btn btn-success" />
         </p>
     </fieldset>
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">请选择题目</h3>
+  </div>
+  <div class="modal-body">
+      <div id="sidetreecontrol"><a href="?#">全部收缩</a> | <a href="?#">全部展开</a></div>
+    <ul id="tree" class="treeview-gray">        @foreach (var item in ViewBag.Questions)
+        {
+            <li><input type='checkbox' questionid='@item.Id'/><span>@item.Name</span><ul>
+                @foreach (var k in item.List)
+                {
+                    <li><span>@k.Name</span></li>
+                }
+            </ul></li>
+        }    </ul>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+    <button class="btn btn-primary">确定</button>
+  </div>
+</div>
+    
+    
+    
+  
 }
+
+
 
 
 
