@@ -7,7 +7,7 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>编辑语音调查答案流水</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -61,8 +61,8 @@
            是否分配人工再调查
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Is_Manual_Revisit)
-            @Html.ValidationMessageFor(model => model.Is_Manual_Revisit)
+            @Html.RadioButtonFor(model => model.Is_Manual_Revisit, "false", new { Checked = "checked" }) 否
+            @Html.RadioButtonFor(model => model.Is_Manual_Revisit, "true") 是
         </div>
         @Html.HiddenFor(model => model.Voice_Key_ID)
         <p>
