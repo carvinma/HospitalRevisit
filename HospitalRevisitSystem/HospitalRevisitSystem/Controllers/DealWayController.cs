@@ -36,7 +36,7 @@ namespace HospitalRevisitSystem.Controllers
             {
                 query = query.Where(s => s.Processing_Method.ToLower().Contains(searchString.ToLower()) == true);
             }
-            query = query.OrderBy(s => s.Deal_Way_ID);
+            query = query.OrderByDescending(s => s.Deal_Way_ID);
             int pageSize = 10;
             int pageNumber = (page ?? 1);
             return View(query.ToPagedList(pageNumber, pageSize));
