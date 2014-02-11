@@ -102,6 +102,10 @@
             <End Role="tbDepartment" EntitySet="tbDepartment" />
             <End Role="tbStaff" EntitySet="tbStaff" />
           </AssociationSet>
+          <AssociationSet Name="FK_tbStaff_tbRole" Association="dbHospitalRevisitModel.Store.FK_tbStaff_tbRole">
+            <End Role="tbRole" EntitySet="tbRole" />
+            <End Role="tbStaff" EntitySet="tbStaff" />
+          </AssociationSet>
           <AssociationSet Name="FK_tbStaffInfo_tbStaffDuty" Association="dbHospitalRevisitModel.Store.FK_tbStaffInfo_tbStaffDuty">
             <End Role="tbStaffDuty" EntitySet="tbStaffDuty" />
             <End Role="tbStaff" EntitySet="tbStaff" />
@@ -328,6 +332,7 @@
           <Property Name="Department_ID" Type="int" />
           <Property Name="Phone_Number" Type="nvarchar" MaxLength="20" />
           <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role_ID" Type="int" />
         </EntityType>
         <EntityType Name="tbStaffDuty">
           <Key>
@@ -593,6 +598,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tbStaff_tbRole">
+          <End Role="tbRole" Type="dbHospitalRevisitModel.Store.tbRole" Multiplicity="0..1" />
+          <End Role="tbStaff" Type="dbHospitalRevisitModel.Store.tbStaff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbRole">
+              <PropertyRef Name="Role_ID" />
+            </Principal>
+            <Dependent Role="tbStaff">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tbStaffInfo_tbStaffDuty">
           <End Role="tbStaffDuty" Type="dbHospitalRevisitModel.Store.tbStaffDuty" Multiplicity="0..1" />
           <End Role="tbStaff" Type="dbHospitalRevisitModel.Store.tbStaff" Multiplicity="*" />
@@ -773,6 +790,10 @@
           <AssociationSet Name="FK_tbReference_Information_tbReference_Information" Association="dbHospitalRevisitModel.FK_tbReference_Information_tbReference_Information">
             <End Role="tbReference_Information" EntitySet="tbReference_Information" />
             <End Role="tbReference_Information1" EntitySet="tbReference_Information" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbStaff_tbRole" Association="dbHospitalRevisitModel.FK_tbStaff_tbRole">
+            <End Role="tbRole" EntitySet="tbRole" />
+            <End Role="tbStaff" EntitySet="tbStaff" />
           </AssociationSet>
           <AssociationSet Name="FK_tbStaffInfo_tbStaffDuty" Association="dbHospitalRevisitModel.FK_tbStaffInfo_tbStaffDuty">
             <End Role="tbStaffDuty" EntitySet="tbStaffDuty" />
@@ -1013,6 +1034,7 @@
           <Property Type="Int32" Name="Role_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Role_Name" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Role_Menus" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tbStaff" Relationship="dbHospitalRevisitModel.FK_tbStaff_tbRole" FromRole="tbRole" ToRole="tbStaff" />
         </EntityType>
         <EntityType Name="tbStaff">
           <Key>
@@ -1025,8 +1047,10 @@
           <Property Type="Int32" Name="Department_ID" />
           <Property Type="String" Name="Phone_Number" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Role_ID" />
           <NavigationProperty Name="tbDepartment" Relationship="dbHospitalRevisitModel.FK_tbStaff_tbDepartment" FromRole="tbStaff" ToRole="tbDepartment" />
           <NavigationProperty Name="tbPoint_Out" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbStaff" FromRole="tbStaff" ToRole="tbPoint_Out" />
+          <NavigationProperty Name="tbRole" Relationship="dbHospitalRevisitModel.FK_tbStaff_tbRole" FromRole="tbStaff" ToRole="tbRole" />
           <NavigationProperty Name="tbStaffDuty" Relationship="dbHospitalRevisitModel.FK_tbStaffInfo_tbStaffDuty" FromRole="tbStaff" ToRole="tbStaffDuty" />
         </EntityType>
         <EntityType Name="tbStaffDuty">
@@ -1329,6 +1353,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tbStaff_tbRole">
+          <End Type="dbHospitalRevisitModel.tbRole" Role="tbRole" Multiplicity="0..1" />
+          <End Type="dbHospitalRevisitModel.tbStaff" Role="tbStaff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbRole">
+              <PropertyRef Name="Role_ID" />
+            </Principal>
+            <Dependent Role="tbStaff">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_tbStaffInfo_tbStaffDuty">
           <End Type="dbHospitalRevisitModel.tbStaffDuty" Role="tbStaffDuty" Multiplicity="0..1" />
           <End Type="dbHospitalRevisitModel.tbStaff" Role="tbStaff" Multiplicity="*" />
@@ -1595,6 +1631,7 @@
           <EntitySetMapping Name="tbStaff">
             <EntityTypeMapping TypeName="dbHospitalRevisitModel.tbStaff">
               <MappingFragment StoreEntitySet="tbStaff">
+                <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
                 <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
