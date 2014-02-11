@@ -1,9 +1,9 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutLogOn.cshtml";
 }
-@model FWMemberAdmin.Models.LogOnModel
+@model HospitalRevisitSystem.ViewModels.LogOnModel
 @{
-    ViewBag.Title = "管理员登录";
+    ViewBag.Title = "用户登录";
 }
  
 
@@ -13,22 +13,22 @@
 @using (Html.BeginForm()) {
     <div class="span4" style="padding-top:200px">
         <fieldset>
-            <legend>管理员登录</legend>
-@Html.ValidationSummary(true, "管理员账户或密码不正确")
+            <legend>用户登录</legend>
+@Html.ValidationSummary(true, "用户账户或密码不正确")
             <div class="editor-label">
-                @Html.LabelFor(m => m.Admin_Name)
+                @Html.LabelFor(m => m.Staff_Name)
             </div>
             <div class="editor-field">
-                @Html.TextBoxFor(m => m.Admin_Name)
-                @Html.ValidationMessageFor(m => m.Admin_Name)
+                @Html.TextBoxFor(m => m.Staff_Name)
+                @Html.ValidationMessageFor(m => m.Staff_Name)
             </div>
 
             <div class="editor-label">
-                @Html.LabelFor(m => m.Admin_Password)
+                @Html.LabelFor(m => m.Password)
             </div>
             <div class="editor-field">
-                @Html.PasswordFor(m => m.Admin_Password)
-                @Html.ValidationMessageFor(m => m.Admin_Password)
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
             </div>
 
            
