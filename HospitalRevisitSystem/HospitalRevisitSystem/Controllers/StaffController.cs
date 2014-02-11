@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HospitalRevisitSystem.ViewModels;
+using System.Web.Security;
+using System.Net;
 using PagedList;
+using System.Data;
 
 namespace HospitalRevisitSystem.Controllers
 {
@@ -86,7 +88,7 @@ namespace HospitalRevisitSystem.Controllers
         //
         // GET: /Staff/Edit/5
 
-        public ActionResult Edit(int id = 0)
+      /*  public ActionResult Edit(int id = 0)
         {
             tbStaff tbstaff = db.tbStaff.Find(id);
             if (tbstaff == null)
@@ -113,7 +115,7 @@ namespace HospitalRevisitSystem.Controllers
             ViewBag.Department_ID = new SelectList(db.tbDepartment, "Department_ID", "Department_Name", tbstaff.Department_ID);
             ViewBag.StaffDuty_ID = new SelectList(db.tbStaffDuty, "StaffDuty_ID", "StaffDuty_Name", tbstaff.StaffDuty_ID);
             return View(tbstaff);
-        }
+        }*/
 
         //
         // GET: /Staff/Delete/5
@@ -145,5 +147,47 @@ namespace HospitalRevisitSystem.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+        public ActionResult ChangePassword()
+        {
+            ChangePasswordView cpv = new ChangePasswordView();
+            return View();            
+        }
+
+        [HttpPost]
+        public ActionResult ChangePassword(ChangePasswordView cpv)
+        {
+            if (ModelState.IsValid)
+            {
+                if (cpv.New_Password == cpv.Confirm_New_Password)
+                {
+                    int id = int.Parse(System.Web.HttpContext.Current.Session["Staff_ID"].ToString());
+                    tbStaff staff= db.tbStaff.Find(id);                    
+                    string secretpassword = FormsAuthentication.HashPasswordForStoringInConfigFile(cpv.Password, "SHA1");
+                    if (secretpassword == staff.Password)
+                    {
+                        staff.Password= FormsAuthentication.HashPasswordForStoringInConfigFile(cpv.New_Password, "SHA1");
+                        db.Entry(staff).State = EntityState.Modified;
+                        db.SaveChanges();
+                        ViewBag.Result = "修改成功";
+                        return View();
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("Password", "旧密码不正确");
+                        return View(cpv);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("Confirm_New_Admin_Password", "确认新密码与新密码不一致");
+                    return View(cpv);
+                }
+            }
+            ViewBag.Result = "修改失败";
+            return View(cpv);
+
+            
+
+            }
     }
 }
