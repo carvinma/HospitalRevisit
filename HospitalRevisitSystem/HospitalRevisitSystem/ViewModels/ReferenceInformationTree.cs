@@ -7,10 +7,10 @@ namespace HospitalRevisitSystem.ViewModels
 {
     public class ReferenceInformationTree
     {
-        public static void getAllChildren(int ID, ref TreeModel treeList, ref dbHospitalRevisitEntities dbContext)
+        public static void getAllChildren(int ID, ref ReferenceInformationTreeModel treeList, ref dbHospitalRevisitEntities dbContext)
         {
             tbReference_Information ri = dbContext.tbReference_Information.Find(ID);
-            TreeModel tree = new TreeModel();
+            ReferenceInformationTreeModel tree = new ReferenceInformationTreeModel();
             tree.Id = ID;
             tree.Name = ri.Information_Content;
             tree.Sequence_Number = ri.Sequence_Number??0;
@@ -30,17 +30,17 @@ namespace HospitalRevisitSystem.ViewModels
         }
     
     }
-    public class TreeModel
+    public class ReferenceInformationTreeModel
     {
-        public TreeModel()
+        public ReferenceInformationTreeModel()
         {
-            this.List = new List<TreeModel>();
+            this.List = new List<ReferenceInformationTreeModel>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
         public int Sequence_Number;
-        public IList<TreeModel> List { get; private set; }
+        public IList<ReferenceInformationTreeModel> List { get; private set; }
 
         public bool IsChild
         {

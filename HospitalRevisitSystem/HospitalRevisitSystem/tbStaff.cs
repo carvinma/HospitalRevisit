@@ -25,6 +25,7 @@ namespace HospitalRevisitSystem
         public Nullable<int> StaffDuty_ID { get; set; }
         public Nullable<int> Department_ID { get; set; }
         public string Phone_Number { get; set; }
+        public string Password { get; set; }
     
         public virtual tbDepartment tbDepartment { get; set; }
         public virtual ICollection<tbPoint_Out> tbPoint_Out { get; set; }

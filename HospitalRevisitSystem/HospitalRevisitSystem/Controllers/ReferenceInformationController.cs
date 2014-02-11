@@ -140,9 +140,9 @@ namespace HospitalRevisitSystem.Controllers
         }
         public ActionResult Index(int id = 0)
         {
-            TreeModel treeList = new TreeModel();
+            ReferenceInformationTreeModel treeList = new ReferenceInformationTreeModel();
             ReferenceInformationTree.getAllChildren(id, ref treeList,ref db);
-            TreeModel tree = null;
+            ReferenceInformationTreeModel tree = null;
             if (treeList.List.Count > 0)
             {
                 tree = treeList.List[0];

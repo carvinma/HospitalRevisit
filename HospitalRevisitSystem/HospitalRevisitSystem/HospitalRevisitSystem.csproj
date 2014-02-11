@@ -236,6 +236,7 @@
     <Compile Include="tbVoice_Plan.cs">
       <DependentUpon>HospitalRevisit.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\InvestigationQuestionTree.cs" />
     <Compile Include="ViewModels\ReferenceInformationTree.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -690,6 +691,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\ReferenceInformation\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CallerQuestion\副本 Create.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

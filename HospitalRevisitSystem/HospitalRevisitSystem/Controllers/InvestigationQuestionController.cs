@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using HospitalRevisitSystem.ViewModels;
+using System.Collections;
 
 namespace HospitalRevisitSystem.Controllers
 {
@@ -140,6 +142,13 @@ namespace HospitalRevisitSystem.Controllers
         {
             db.Dispose();
             base.Dispose(disposing);
+        }
+        [HttpPost]        
+        public JsonResult LoadQuestion()
+        {
+            ArrayList arr = new ArrayList();
+            arr=InvestigationQuestionTree.getAllQuestions(db);           
+            return new JsonResult { Data = arr };
         }
     }
 }

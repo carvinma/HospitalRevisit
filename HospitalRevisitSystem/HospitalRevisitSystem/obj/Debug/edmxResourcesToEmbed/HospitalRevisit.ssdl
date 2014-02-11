@@ -322,6 +322,7 @@
     <Property Name="StaffDuty_ID" Type="int" />
     <Property Name="Department_ID" Type="int" />
     <Property Name="Phone_Number" Type="nvarchar" MaxLength="20" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="tbStaffDuty">
     <Key>

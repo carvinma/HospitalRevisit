@@ -126,9 +126,9 @@
     <Key>
       <PropertyRef Name="Caller_Question_ID" />
     </Key>
-    <Property Name="Caller_Question_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Caller_Title_ID" Type="Int32" />
-    <Property Name="Investigation_Question_ID" Type="Int32" />
+    <Property Type="Int32" Name="Caller_Question_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Caller_Title_ID" />
+    <Property Type="Int32" Name="Investigation_Question_ID" />
     <NavigationProperty Name="tbCaller_Title" Relationship="dbHospitalRevisitModel.FK_tbCaller_Question_tbCaller_Title" FromRole="tbCaller_Question" ToRole="tbCaller_Title" />
     <NavigationProperty Name="tbInvestigation_Question" Relationship="dbHospitalRevisitModel.FK_tbCaller_Question_tbInvestigation_Question" FromRole="tbCaller_Question" ToRole="tbInvestigation_Question" />
   </EntityType>
@@ -136,8 +136,8 @@
     <Key>
       <PropertyRef Name="Caller_Title_ID" />
     </Key>
-    <Property Name="Caller_Title_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Caller_Title_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Caller_Title_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Caller_Title_Name" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbCaller_Question" Relationship="dbHospitalRevisitModel.FK_tbCaller_Question_tbCaller_Title" FromRole="tbCaller_Title" ToRole="tbCaller_Question" />
     <NavigationProperty Name="tbVoice_Plan" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbCaller_Title" FromRole="tbCaller_Title" ToRole="tbVoice_Plan" />
     <NavigationProperty Name="tbVoice_Key" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbCaller_Title" FromRole="tbCaller_Title" ToRole="tbVoice_Key" />
@@ -146,9 +146,9 @@
     <Key>
       <PropertyRef Name="Circulation_ID" />
     </Key>
-    <Property Name="Circulation_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Processor_Serial_Number" Type="Int32" Nullable="false" />
-    <Property Name="Department_ID" Type="Int32" />
+    <Property Type="Int32" Name="Circulation_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Processor_Serial_Number" Nullable="false" />
+    <Property Type="Int32" Name="Department_ID" />
     <NavigationProperty Name="tbCirculation1" Relationship="dbHospitalRevisitModel.FK_tbCirculation_tbCirculation" FromRole="tbCirculation" ToRole="tbCirculation1" />
     <NavigationProperty Name="tbCirculation2" Relationship="dbHospitalRevisitModel.FK_tbCirculation_tbCirculation" FromRole="tbCirculation1" ToRole="tbCirculation" />
     <NavigationProperty Name="tbDepartment" Relationship="dbHospitalRevisitModel.FK_tbCirculation_tbDepartment" FromRole="tbCirculation" ToRole="tbDepartment" />
@@ -157,25 +157,25 @@
     <Key>
       <PropertyRef Name="Content_Record_ID" />
     </Key>
-    <Property Name="Content_Record_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Content" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-    <Property Name="Superior_No" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Sequence_Number" Type="Int32" />
+    <Property Type="Int32" Name="Content_Record_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Content" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Superior_No" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Sequence_Number" />
   </EntityType>
   <EntityType Name="tbDeal_Way">
     <Key>
       <PropertyRef Name="Deal_Way_ID" />
     </Key>
-    <Property Name="Deal_Way_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Processing_Method" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Deal_Way_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Processing_Method" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbPoint_Out" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbDeal_Way" FromRole="tbDeal_Way" ToRole="tbPoint_Out" />
   </EntityType>
   <EntityType Name="tbDepartment">
     <Key>
       <PropertyRef Name="Department_ID" />
     </Key>
-    <Property Name="Department_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Department_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Department_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Department_Name" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbCirculation" Relationship="dbHospitalRevisitModel.FK_tbCirculation_tbDepartment" FromRole="tbDepartment" ToRole="tbCirculation" />
     <NavigationProperty Name="tbPoint_Out" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbDepartment" FromRole="tbDepartment" ToRole="tbPoint_Out" />
     <NavigationProperty Name="tbStaff" Relationship="dbHospitalRevisitModel.FK_tbStaff_tbDepartment" FromRole="tbDepartment" ToRole="tbStaff" />
@@ -184,55 +184,55 @@
     <Key>
       <PropertyRef Name="Diagnosis_ID" />
     </Key>
-    <Property Name="Diagnosis_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Patient_ID" Type="Int32" />
-    <Property Name="In_Hospital_NO" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Principal_Diagnosis" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-    <Property Name="Out_Hospital_Advice" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-    <Property Name="Department_ID" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
-    <Property Name="In_Hospital_Date" Type="DateTime" Precision="3" />
-    <Property Name="Out_Hospital_Date" Type="DateTime" Precision="3" />
-    <Property Name="Rediagnose_Date" Type="DateTime" Precision="3" />
-    <Property Name="Rediagnose_Department_ID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Rediagnose_Doctor" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
-    <Property Name="Is_Assign_Voice_Survey" Type="Boolean" />
-    <Property Name="Is_Assign_Manual_Survey" Type="Boolean" />
+    <Property Type="Int32" Name="Diagnosis_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Patient_ID" />
+    <Property Type="String" Name="In_Hospital_NO" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Principal_Diagnosis" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Out_Hospital_Advice" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Department_ID" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="In_Hospital_Date" Precision="3" />
+    <Property Type="DateTime" Name="Out_Hospital_Date" Precision="3" />
+    <Property Type="DateTime" Name="Rediagnose_Date" Precision="3" />
+    <Property Type="String" Name="Rediagnose_Department_ID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Rediagnose_Doctor" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Is_Assign_Voice_Survey" />
+    <Property Type="Boolean" Name="Is_Assign_Manual_Survey" />
     <NavigationProperty Name="tbVoice_Plan" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbDiagnosis" FromRole="tbDiagnosis" ToRole="tbVoice_Plan" />
   </EntityType>
   <EntityType Name="tbInformation_Register">
     <Key>
       <PropertyRef Name="Information_Register_ID" />
     </Key>
-    <Property Name="Information_Register_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Personnal_Caller_ID" Type="Int32" />
-    <Property Name="Consulting_Phone_Number" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
-    <Property Name="Air_Time" Type="DateTime" Precision="3" />
-    <Property Name="Involve_Content" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-    <Property Name="Involve_Department_ID" Type="Int32" />
-    <Property Name="Involve_StaffInfo_ID" Type="Int32" />
-    <Property Name="Involve_Content_Qualitative" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="Is_Moving" Type="Boolean" />
-    <Property Name="SOSC_CSR_ID" Type="Int32" />
-    <Property Name="Remarks" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Information_Register_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Personnal_Caller_ID" />
+    <Property Type="String" Name="Consulting_Phone_Number" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Air_Time" Precision="3" />
+    <Property Type="String" Name="Involve_Content" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Involve_Department_ID" />
+    <Property Type="Int32" Name="Involve_StaffInfo_ID" />
+    <Property Type="String" Name="Involve_Content_Qualitative" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Is_Moving" />
+    <Property Type="Int32" Name="SOSC_CSR_ID" />
+    <Property Type="String" Name="Remarks" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbPoint_Out" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbInformation_Register" FromRole="tbInformation_Register" ToRole="tbPoint_Out" />
   </EntityType>
   <EntityType Name="tbInvestigation_Key">
     <Key>
       <PropertyRef Name="Investigation_Key_ID" />
     </Key>
-    <Property Name="Investigation_Key_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Iinvestigatio_Question_ID" Type="Int32" />
-    <Property Name="Answer_Marked_No" Type="Int32" />
-    <Property Name="Answer_Content" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Investigation_Key_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Iinvestigatio_Question_ID" />
+    <Property Type="Int32" Name="Answer_Marked_No" />
+    <Property Type="String" Name="Answer_Content" MaxLength="500" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbInvestigation_Question" Relationship="dbHospitalRevisitModel.FK_tbInvestigation_Key_tbInvestigation_Question" FromRole="tbInvestigation_Key" ToRole="tbInvestigation_Question" />
   </EntityType>
   <EntityType Name="tbInvestigation_Question">
     <Key>
       <PropertyRef Name="Investigation_Question_ID" />
     </Key>
-    <Property Name="Investigation_Question_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Review_Content" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-    <Property Name="File_Paths" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Investigation_Question_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Review_Content" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="File_Paths" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbCaller_Question" Relationship="dbHospitalRevisitModel.FK_tbCaller_Question_tbInvestigation_Question" FromRole="tbInvestigation_Question" ToRole="tbCaller_Question" />
     <NavigationProperty Name="tbInvestigation_Key" Relationship="dbHospitalRevisitModel.FK_tbInvestigation_Key_tbInvestigation_Question" FromRole="tbInvestigation_Question" ToRole="tbInvestigation_Key" />
     <NavigationProperty Name="tbVoice_Key" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbInvestigation_Question" FromRole="tbInvestigation_Question" ToRole="tbVoice_Key" />
@@ -241,10 +241,10 @@
     <Key>
       <PropertyRef Name="Message_Sample_ID" />
     </Key>
-    <Property Name="Message_Sample_ID" Type="Int32" Nullable="false" />
-    <Property Name="Message_Content" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="MMS_Path" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Parent_ID" Type="Int32" />
+    <Property Type="Int32" Name="Message_Sample_ID" Nullable="false" />
+    <Property Type="String" Name="Message_Content" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MMS_Path" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Parent_ID" />
     <NavigationProperty Name="tbMessage_Sample1" Relationship="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample" FromRole="tbMessage_Sample" ToRole="tbMessage_Sample1" />
     <NavigationProperty Name="tbMessage_Sample2" Relationship="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample" FromRole="tbMessage_Sample1" ToRole="tbMessage_Sample" />
     <NavigationProperty Name="tbMessage_Sample11" Relationship="dbHospitalRevisitModel.FK_tbMessage_Sample_tbMessage_Sample1" FromRole="tbMessage_Sample" ToRole="tbMessage_Sample1" />
@@ -254,26 +254,26 @@
     <Key>
       <PropertyRef Name="Message_Send_Plan_ID" />
     </Key>
-    <Property Name="Message_Send_Plan_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Phone_Number" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
-    <Property Name="Plan_Send_Time" Type="DateTime" Precision="3" />
-    <Property Name="Actual_Send_Time" Type="DateTime" Precision="3" />
-    <Property Name="Message_Content" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="MMS_Path" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Is_Send" Type="Boolean" />
+    <Property Type="Int32" Name="Message_Send_Plan_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Phone_Number" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Plan_Send_Time" Precision="3" />
+    <Property Type="DateTime" Name="Actual_Send_Time" Precision="3" />
+    <Property Type="String" Name="Message_Content" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MMS_Path" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Is_Send" />
   </EntityType>
   <EntityType Name="tbPatient">
     <Key>
       <PropertyRef Name="Patient_ID" />
     </Key>
-    <Property Name="Patient_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Heath_Card" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Document_No" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Patient_Name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
-    <Property Name="Sex" Type="Boolean" />
-    <Property Name="Birthday" Type="DateTime" Precision="3" />
-    <Property Name="Address" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
-    <Property Name="Is_Dead" Type="Boolean" />
+    <Property Type="Int32" Name="Patient_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Heath_Card" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Document_No" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Patient_Name" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Sex" />
+    <Property Type="DateTime" Name="Birthday" Precision="3" />
+    <Property Type="String" Name="Address" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Is_Dead" />
     <NavigationProperty Name="tbPhoneBook" Relationship="dbHospitalRevisitModel.FK_tbPhoneBook_tbPatient" FromRole="tbPatient" ToRole="tbPhoneBook" />
     <NavigationProperty Name="tbVoice_Plan" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbPatient" FromRole="tbPatient" ToRole="tbVoice_Plan" />
   </EntityType>
@@ -281,23 +281,23 @@
     <Key>
       <PropertyRef Name="Personnal_Caller_ID" />
     </Key>
-    <Property Name="Personnal_Caller_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Patient_ID" Type="Int32" />
-    <Property Name="Vioce_Key_Account_ID" Type="Int32" />
-    <Property Name="Review_Project_Name_ID" Type="Int32" />
-    <Property Name="SOSC_CSR_ID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Is_Return_Visit" Type="Boolean" />
-    <Property Name="Remarks" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Personnal_Caller_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Patient_ID" />
+    <Property Type="Int32" Name="Vioce_Key_Account_ID" />
+    <Property Type="Int32" Name="Review_Project_Name_ID" />
+    <Property Type="String" Name="SOSC_CSR_ID" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Is_Return_Visit" />
+    <Property Type="String" Name="Remarks" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tbPhoneBook">
     <Key>
       <PropertyRef Name="PhoneBook_ID" />
     </Key>
-    <Property Name="PhoneBook_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Patient_ID" Type="Int32" />
-    <Property Name="Phone_Number" Type="Int32" />
-    <Property Name="Phone_Name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
-    <Property Name="patient_relation" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="PhoneBook_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Patient_ID" />
+    <Property Type="Int32" Name="Phone_Number" />
+    <Property Type="String" Name="Phone_Name" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="patient_relation" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbPatient" Relationship="dbHospitalRevisitModel.FK_tbPhoneBook_tbPatient" FromRole="tbPhoneBook" ToRole="tbPatient" />
     <NavigationProperty Name="tbPhoneBook1" Relationship="dbHospitalRevisitModel.FK_tbPhoneBook_tbPhoneBook" FromRole="tbPhoneBook" ToRole="tbPhoneBook1" />
     <NavigationProperty Name="tbPhoneBook2" Relationship="dbHospitalRevisitModel.FK_tbPhoneBook_tbPhoneBook" FromRole="tbPhoneBook1" ToRole="tbPhoneBook" />
@@ -306,14 +306,14 @@
     <Key>
       <PropertyRef Name="Point_Out_ID" />
     </Key>
-    <Property Name="Point_Out_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Information_Register_ID" Type="Int32" />
-    <Property Name="Deal_Way_ID" Type="Int32" />
-    <Property Name="Response_Department_ID" Type="Int32" />
-    <Property Name="Response_Staff_ID" Type="Int32" />
-    <Property Name="Department_Response_Time" Type="DateTime" Precision="3" />
-    <Property Name="Department_Response_Content" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-    <Property Name="Remarks" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Point_Out_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Information_Register_ID" />
+    <Property Type="Int32" Name="Deal_Way_ID" />
+    <Property Type="Int32" Name="Response_Department_ID" />
+    <Property Type="Int32" Name="Response_Staff_ID" />
+    <Property Type="DateTime" Name="Department_Response_Time" Precision="3" />
+    <Property Type="String" Name="Department_Response_Content" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remarks" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbDeal_Way" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbDeal_Way" FromRole="tbPoint_Out" ToRole="tbDeal_Way" />
     <NavigationProperty Name="tbDepartment" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbDepartment" FromRole="tbPoint_Out" ToRole="tbDepartment" />
     <NavigationProperty Name="tbInformation_Register" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbInformation_Register" FromRole="tbPoint_Out" ToRole="tbInformation_Register" />
@@ -323,10 +323,10 @@
     <Key>
       <PropertyRef Name="Reference_Information_ID" />
     </Key>
-    <Property Name="Reference_Information_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Information_Content" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
-    <Property Name="Parent_ID" Type="Int32" />
-    <Property Name="Sequence_Number" Type="Int32" />
+    <Property Type="Int32" Name="Reference_Information_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Information_Content" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Parent_ID" />
+    <Property Type="Int32" Name="Sequence_Number" />
     <NavigationProperty Name="tbReference_Information1" Relationship="dbHospitalRevisitModel.FK_tbReference_Information_tbReference_Information" FromRole="tbReference_Information" ToRole="tbReference_Information1" />
     <NavigationProperty Name="tbReference_Information2" Relationship="dbHospitalRevisitModel.FK_tbReference_Information_tbReference_Information" FromRole="tbReference_Information1" ToRole="tbReference_Information" />
   </EntityType>
@@ -334,27 +334,28 @@
     <Key>
       <PropertyRef Name="Review_Project_Name_ID" />
     </Key>
-    <Property Name="Review_Project_Name_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Review_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Review_Project_Name_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Review_Name" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tbRole">
     <Key>
       <PropertyRef Name="Role_ID" />
     </Key>
-    <Property Name="Role_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Role_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Role_Menus" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Role_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Role_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Role_Menus" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tbStaff">
     <Key>
       <PropertyRef Name="Staff_ID" />
     </Key>
-    <Property Name="Staff_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Staff_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Staff_No" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="StaffDuty_ID" Type="Int32" />
-    <Property Name="Department_ID" Type="Int32" />
-    <Property Name="Phone_Number" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Staff_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Staff_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Staff_No" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="StaffDuty_ID" />
+    <Property Type="Int32" Name="Department_ID" />
+    <Property Type="String" Name="Phone_Number" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="tbDepartment" Relationship="dbHospitalRevisitModel.FK_tbStaff_tbDepartment" FromRole="tbStaff" ToRole="tbDepartment" />
     <NavigationProperty Name="tbPoint_Out" Relationship="dbHospitalRevisitModel.FK_tbPoint_Out_tbStaff" FromRole="tbStaff" ToRole="tbPoint_Out" />
     <NavigationProperty Name="tbStaffDuty" Relationship="dbHospitalRevisitModel.FK_tbStaffInfo_tbStaffDuty" FromRole="tbStaff" ToRole="tbStaffDuty" />
@@ -363,35 +364,35 @@
     <Key>
       <PropertyRef Name="StaffDuty_ID" />
     </Key>
-    <Property Name="StaffDuty_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="StaffDuty_Name" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Type="Int32" Name="StaffDuty_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="StaffDuty_Name" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="tbStaff" Relationship="dbHospitalRevisitModel.FK_tbStaffInfo_tbStaffDuty" FromRole="tbStaffDuty" ToRole="tbStaff" />
   </EntityType>
   <EntityType Name="tbVisits_Information">
     <Key>
       <PropertyRef Name="Visits_Information_ID" />
     </Key>
-    <Property Name="Visits_Information_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Patient_ID" Type="Int32" />
-    <Property Name="Submit_Date" Type="DateTime" Precision="3" />
-    <Property Name="The_Reservation_Department" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="ZocDoc" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Records_Generated_Date" Type="DateTime" Precision="3" />
-    <Property Name="Is_Exercise" Type="Boolean" />
-    <Property Name="Exercise_Staff_No" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Remarks" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Type="Int32" Name="Visits_Information_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Patient_ID" />
+    <Property Type="DateTime" Name="Submit_Date" Precision="3" />
+    <Property Type="String" Name="The_Reservation_Department" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ZocDoc" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Records_Generated_Date" Precision="3" />
+    <Property Type="Boolean" Name="Is_Exercise" />
+    <Property Type="String" Name="Exercise_Staff_No" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remarks" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tbVoice_Key">
     <Key>
       <PropertyRef Name="Voice_Key_ID" />
     </Key>
-    <Property Name="Voice_Key_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Voice_Plan_ID" Type="Int32" />
-    <Property Name="Caller_Title_ID" Type="Int32" />
-    <Property Name="Investigation_Question_ID" Type="Int32" />
-    <Property Name="Answer_Marked_No" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
-    <Property Name="Record_Generate_Time" Type="DateTime" Precision="3" />
-    <Property Name="Is_Manual_Revisit" Type="Boolean" />
+    <Property Type="Int32" Name="Voice_Key_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Voice_Plan_ID" />
+    <Property Type="Int32" Name="Caller_Title_ID" />
+    <Property Type="Int32" Name="Investigation_Question_ID" />
+    <Property Type="String" Name="Answer_Marked_No" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Record_Generate_Time" Precision="3" />
+    <Property Type="Boolean" Name="Is_Manual_Revisit" />
     <NavigationProperty Name="tbCaller_Title" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbCaller_Title" FromRole="tbVoice_Key" ToRole="tbCaller_Title" />
     <NavigationProperty Name="tbInvestigation_Question" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbInvestigation_Question" FromRole="tbVoice_Key" ToRole="tbInvestigation_Question" />
     <NavigationProperty Name="tbVoice_Key1" Relationship="dbHospitalRevisitModel.FK_tbVoice_Key_tbVoice_Key" FromRole="tbVoice_Key" ToRole="tbVoice_Key1" />
@@ -402,16 +403,16 @@
     <Key>
       <PropertyRef Name="Voice_Plan_ID" />
     </Key>
-    <Property Name="Voice_Plan_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Patient_ID" Type="Int32" />
-    <Property Name="Diagnosis_ID" Type="Int32" />
-    <Property Name="Caller_Title_ID" Type="Int32" />
-    <Property Name="Planning_Time" Type="DateTime" Precision="3" />
-    <Property Name="Revisit_Days" Type="DateTime" Precision="3" />
-    <Property Name="Is_Revisit" Type="Boolean" />
-    <Property Name="File_Paths" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-    <Property Name="Is_Answer" Type="Boolean" />
-    <Property Name="Is_Manual_Revisit" Type="Boolean" />
+    <Property Type="Int32" Name="Voice_Plan_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Patient_ID" />
+    <Property Type="Int32" Name="Diagnosis_ID" />
+    <Property Type="Int32" Name="Caller_Title_ID" />
+    <Property Type="DateTime" Name="Planning_Time" Precision="3" />
+    <Property Type="DateTime" Name="Revisit_Days" Precision="3" />
+    <Property Type="Boolean" Name="Is_Revisit" />
+    <Property Type="String" Name="File_Paths" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Is_Answer" />
+    <Property Type="Boolean" Name="Is_Manual_Revisit" />
     <NavigationProperty Name="tbCaller_Title" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbCaller_Title" FromRole="tbVoice_Plan" ToRole="tbCaller_Title" />
     <NavigationProperty Name="tbDiagnosis" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbDiagnosis" FromRole="tbVoice_Plan" ToRole="tbDiagnosis" />
     <NavigationProperty Name="tbPatient" Relationship="dbHospitalRevisitModel.FK_tbPlan_Voice_Caller_tbPatient" FromRole="tbVoice_Plan" ToRole="tbPatient" />
@@ -420,8 +421,8 @@
     <NavigationProperty Name="tbVoice_Plan2" Relationship="dbHospitalRevisitModel.FK_tbVoice_Plan_tbVoice_Plan" FromRole="tbVoice_Plan1" ToRole="tbVoice_Plan" />
   </EntityType>
   <Association Name="FK_tbCaller_Question_tbCaller_Title">
-    <End Role="tbCaller_Title" Type="dbHospitalRevisitModel.tbCaller_Title" Multiplicity="0..1" />
-    <End Role="tbCaller_Question" Type="dbHospitalRevisitModel.tbCaller_Question" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbCaller_Title" Role="tbCaller_Title" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbCaller_Question" Role="tbCaller_Question" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbCaller_Title">
         <PropertyRef Name="Caller_Title_ID" />
@@ -432,8 +433,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbCaller_Question_tbInvestigation_Question">
-    <End Role="tbInvestigation_Question" Type="dbHospitalRevisitModel.tbInvestigation_Question" Multiplicity="1" />
-    <End Role="tbCaller_Question" Type="dbHospitalRevisitModel.tbCaller_Question" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbInvestigation_Question" Role="tbInvestigation_Question" Multiplicity="1" />
+    <End Type="dbHospitalRevisitModel.tbCaller_Question" Role="tbCaller_Question" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tbInvestigation_Question">
         <PropertyRef Name="Investigation_Question_ID" />
@@ -444,8 +445,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbPlan_Voice_Caller_tbCaller_Title">
-    <End Role="tbCaller_Title" Type="dbHospitalRevisitModel.tbCaller_Title" Multiplicity="0..1" />
-    <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbCaller_Title" Role="tbCaller_Title" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Plan" Role="tbVoice_Plan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbCaller_Title">
         <PropertyRef Name="Caller_Title_ID" />
@@ -456,8 +457,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbVoice_Key_tbCaller_Title">
-    <End Role="tbCaller_Title" Type="dbHospitalRevisitModel.tbCaller_Title" Multiplicity="0..1" />
-    <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.tbVoice_Key" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbCaller_Title" Role="tbCaller_Title" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Key" Role="tbVoice_Key" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbCaller_Title">
         <PropertyRef Name="Caller_Title_ID" />
@@ -468,8 +469,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbCirculation_tbCirculation">
-    <End Role="tbCirculation" Type="dbHospitalRevisitModel.tbCirculation" Multiplicity="1" />
-    <End Role="tbCirculation1" Type="dbHospitalRevisitModel.tbCirculation" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbCirculation" Role="tbCirculation" Multiplicity="1" />
+    <End Type="dbHospitalRevisitModel.tbCirculation" Role="tbCirculation1" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tbCirculation">
         <PropertyRef Name="Circulation_ID" />
@@ -480,8 +481,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbCirculation_tbDepartment">
-    <End Role="tbDepartment" Type="dbHospitalRevisitModel.tbDepartment" Multiplicity="0..1" />
-    <End Role="tbCirculation" Type="dbHospitalRevisitModel.tbCirculation" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbDepartment" Role="tbDepartment" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbCirculation" Role="tbCirculation" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbDepartment">
         <PropertyRef Name="Department_ID" />
@@ -492,8 +493,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbPoint_Out_tbDeal_Way">
-    <End Role="tbDeal_Way" Type="dbHospitalRevisitModel.tbDeal_Way" Multiplicity="0..1" />
-    <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.tbPoint_Out" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbDeal_Way" Role="tbDeal_Way" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbPoint_Out" Role="tbPoint_Out" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbDeal_Way">
         <PropertyRef Name="Deal_Way_ID" />
@@ -504,8 +505,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbPoint_Out_tbDepartment">
-    <End Role="tbDepartment" Type="dbHospitalRevisitModel.tbDepartment" Multiplicity="0..1" />
-    <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.tbPoint_Out" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbDepartment" Role="tbDepartment" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbPoint_Out" Role="tbPoint_Out" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbDepartment">
         <PropertyRef Name="Department_ID" />
@@ -516,8 +517,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbStaff_tbDepartment">
-    <End Role="tbDepartment" Type="dbHospitalRevisitModel.tbDepartment" Multiplicity="0..1" />
-    <End Role="tbStaff" Type="dbHospitalRevisitModel.tbStaff" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbDepartment" Role="tbDepartment" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbStaff" Role="tbStaff" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbDepartment">
         <PropertyRef Name="Department_ID" />
@@ -528,8 +529,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbPlan_Voice_Caller_tbDiagnosis">
-    <End Role="tbDiagnosis" Type="dbHospitalRevisitModel.tbDiagnosis" Multiplicity="0..1" />
-    <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbDiagnosis" Role="tbDiagnosis" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Plan" Role="tbVoice_Plan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbDiagnosis">
         <PropertyRef Name="Diagnosis_ID" />
@@ -540,8 +541,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbPoint_Out_tbInformation_Register">
-    <End Role="tbInformation_Register" Type="dbHospitalRevisitModel.tbInformation_Register" Multiplicity="0..1" />
-    <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.tbPoint_Out" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbInformation_Register" Role="tbInformation_Register" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbPoint_Out" Role="tbPoint_Out" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbInformation_Register">
         <PropertyRef Name="Information_Register_ID" />
@@ -552,8 +553,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbInvestigation_Key_tbInvestigation_Question">
-    <End Role="tbInvestigation_Question" Type="dbHospitalRevisitModel.tbInvestigation_Question" Multiplicity="0..1" />
-    <End Role="tbInvestigation_Key" Type="dbHospitalRevisitModel.tbInvestigation_Key" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbInvestigation_Question" Role="tbInvestigation_Question" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbInvestigation_Key" Role="tbInvestigation_Key" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbInvestigation_Question">
         <PropertyRef Name="Investigation_Question_ID" />
@@ -564,8 +565,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbVoice_Key_tbInvestigation_Question">
-    <End Role="tbInvestigation_Question" Type="dbHospitalRevisitModel.tbInvestigation_Question" Multiplicity="0..1" />
-    <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.tbVoice_Key" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbInvestigation_Question" Role="tbInvestigation_Question" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Key" Role="tbVoice_Key" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbInvestigation_Question">
         <PropertyRef Name="Investigation_Question_ID" />
@@ -576,8 +577,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbMessage_Sample_tbMessage_Sample">
-    <End Role="tbMessage_Sample" Type="dbHospitalRevisitModel.tbMessage_Sample" Multiplicity="1" />
-    <End Role="tbMessage_Sample1" Type="dbHospitalRevisitModel.tbMessage_Sample" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbMessage_Sample" Role="tbMessage_Sample" Multiplicity="1" />
+    <End Type="dbHospitalRevisitModel.tbMessage_Sample" Role="tbMessage_Sample1" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tbMessage_Sample">
         <PropertyRef Name="Message_Sample_ID" />
@@ -588,8 +589,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbMessage_Sample_tbMessage_Sample1">
-    <End Role="tbMessage_Sample" Type="dbHospitalRevisitModel.tbMessage_Sample" Multiplicity="1" />
-    <End Role="tbMessage_Sample1" Type="dbHospitalRevisitModel.tbMessage_Sample" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbMessage_Sample" Role="tbMessage_Sample" Multiplicity="1" />
+    <End Type="dbHospitalRevisitModel.tbMessage_Sample" Role="tbMessage_Sample1" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tbMessage_Sample">
         <PropertyRef Name="Message_Sample_ID" />
@@ -600,8 +601,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbPhoneBook_tbPatient">
-    <End Role="tbPatient" Type="dbHospitalRevisitModel.tbPatient" Multiplicity="0..1" />
-    <End Role="tbPhoneBook" Type="dbHospitalRevisitModel.tbPhoneBook" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbPatient" Role="tbPatient" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbPhoneBook" Role="tbPhoneBook" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbPatient">
         <PropertyRef Name="Patient_ID" />
@@ -612,8 +613,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbPlan_Voice_Caller_tbPatient">
-    <End Role="tbPatient" Type="dbHospitalRevisitModel.tbPatient" Multiplicity="0..1" />
-    <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbPatient" Role="tbPatient" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Plan" Role="tbVoice_Plan" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbPatient">
         <PropertyRef Name="Patient_ID" />
@@ -624,8 +625,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbPhoneBook_tbPhoneBook">
-    <End Role="tbPhoneBook" Type="dbHospitalRevisitModel.tbPhoneBook" Multiplicity="1" />
-    <End Role="tbPhoneBook1" Type="dbHospitalRevisitModel.tbPhoneBook" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbPhoneBook" Role="tbPhoneBook" Multiplicity="1" />
+    <End Type="dbHospitalRevisitModel.tbPhoneBook" Role="tbPhoneBook1" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tbPhoneBook">
         <PropertyRef Name="PhoneBook_ID" />
@@ -636,8 +637,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbPoint_Out_tbStaff">
-    <End Role="tbStaff" Type="dbHospitalRevisitModel.tbStaff" Multiplicity="0..1" />
-    <End Role="tbPoint_Out" Type="dbHospitalRevisitModel.tbPoint_Out" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbStaff" Role="tbStaff" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbPoint_Out" Role="tbPoint_Out" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbStaff">
         <PropertyRef Name="Staff_ID" />
@@ -648,8 +649,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbReference_Information_tbReference_Information">
-    <End Role="tbReference_Information" Type="dbHospitalRevisitModel.tbReference_Information" Multiplicity="1" />
-    <End Role="tbReference_Information1" Type="dbHospitalRevisitModel.tbReference_Information" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbReference_Information" Role="tbReference_Information" Multiplicity="1" />
+    <End Type="dbHospitalRevisitModel.tbReference_Information" Role="tbReference_Information1" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tbReference_Information">
         <PropertyRef Name="Reference_Information_ID" />
@@ -660,8 +661,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbStaffInfo_tbStaffDuty">
-    <End Role="tbStaffDuty" Type="dbHospitalRevisitModel.tbStaffDuty" Multiplicity="0..1" />
-    <End Role="tbStaff" Type="dbHospitalRevisitModel.tbStaff" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbStaffDuty" Role="tbStaffDuty" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbStaff" Role="tbStaff" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbStaffDuty">
         <PropertyRef Name="StaffDuty_ID" />
@@ -672,8 +673,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbVoice_Key_tbVoice_Key">
-    <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.tbVoice_Key" Multiplicity="1" />
-    <End Role="tbVoice_Key1" Type="dbHospitalRevisitModel.tbVoice_Key" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Key" Role="tbVoice_Key" Multiplicity="1" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Key" Role="tbVoice_Key1" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tbVoice_Key">
         <PropertyRef Name="Voice_Key_ID" />
@@ -684,8 +685,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbVoice_Key_tbVoice_Plan">
-    <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="0..1" />
-    <End Role="tbVoice_Key" Type="dbHospitalRevisitModel.tbVoice_Key" Multiplicity="*" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Plan" Role="tbVoice_Plan" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Key" Role="tbVoice_Key" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tbVoice_Plan">
         <PropertyRef Name="Voice_Plan_ID" />
@@ -696,8 +697,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_tbVoice_Plan_tbVoice_Plan">
-    <End Role="tbVoice_Plan" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="1" />
-    <End Role="tbVoice_Plan1" Type="dbHospitalRevisitModel.tbVoice_Plan" Multiplicity="0..1" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Plan" Role="tbVoice_Plan" Multiplicity="1" />
+    <End Type="dbHospitalRevisitModel.tbVoice_Plan" Role="tbVoice_Plan1" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="tbVoice_Plan">
         <PropertyRef Name="Voice_Plan_ID" />

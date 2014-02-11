@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PagedList;
+using System.Collections;
+using HospitalRevisitSystem.ViewModels;
 
 namespace HospitalRevisitSystem.Controllers
 {
@@ -18,6 +20,7 @@ namespace HospitalRevisitSystem.Controllers
 
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
+           
             ViewBag.CurrentSort = sortOrder;
 
             if (searchString != null)
@@ -39,6 +42,7 @@ namespace HospitalRevisitSystem.Controllers
             query = query.OrderByDescending(s => s.Caller_Question_ID);
             int pageSize = 10;
             int pageNumber = (page ?? 1);
+            
             return View(query.ToPagedList(pageNumber, pageSize));
         }
 
@@ -60,6 +64,9 @@ namespace HospitalRevisitSystem.Controllers
 
         public ActionResult Create()
         {
+            ArrayList arr = new ArrayList();
+            arr = InvestigationQuestionTree.getAllQuestions(db);
+            ViewBag.Questions = arr;
             ViewBag.Caller_Title_ID = new SelectList(db.tbCaller_Title, "Caller_Title_ID", "Caller_Title_Name");
             ViewBag.Caller_Question_ID = new SelectList(db.tbInvestigation_Question, "Investigation_Question_ID", "Review_Content");
             return View();
@@ -145,5 +152,7 @@ namespace HospitalRevisitSystem.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        
     }
 }
