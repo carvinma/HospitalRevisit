@@ -14,8 +14,15 @@ namespace HospitalRevisitSystem
     
     public partial class tbRole
     {
+        public tbRole()
+        {
+            this.tbStaff = new HashSet<tbStaff>();
+        }
+    
         public int Role_ID { get; set; }
         public string Role_Name { get; set; }
         public string Role_Menus { get; set; }
+    
+        public virtual ICollection<tbStaff> tbStaff { get; set; }
     }
 }
